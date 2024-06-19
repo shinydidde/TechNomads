@@ -1,0 +1,20 @@
+.ServiceItem {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: .5em;
+    box-shadow: 0 1px 10px lightgray;
+    color: white;
+    max-width: 56px;
+    padding: 8px;
+}
+
+.SearchBar {
+    background-color: white;
+    /* border-radius: 70px; */
+    box-shadow: 0 0 12px lightgray;
+    display: flex;
+}
+
+.serviceCardContainer {
+    padding: 0 10px; /* Adjust padding as needed */
+}
