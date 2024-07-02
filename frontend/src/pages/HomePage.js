@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Box, Grid } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import { useTranslation } from 'react-i18next';
+// import { makeStyles } from '@mui/styles';
+// import { useTranslation } from 'react-i18next';
 import ServiceSearch from '../components/ServiceSearch';
 import ServiceItem from '../components/ServiceItem';
 import ImageSlider from '../components/ImageSlider';
@@ -9,11 +9,11 @@ import '../components/styles.css';
 import MultiImagesSlider from '../components/MultiImagesSlider';
 import Banner from '../components/Banner';
 
-const useStyles = makeStyles((theme) => ({
-    text: {
-        textAlign: theme.direction === 'rtl' ? 'right' : 'left',
-    },
-}));
+// const useStyles = makeStyles((theme) => ({
+//     text: {
+//         textAlign: theme.direction === 'rtl' ? 'right' : 'left',
+//     },
+// }));
 
 const HomePage = () => {
 
@@ -46,7 +46,7 @@ const HomePage = () => {
                         <br />
                         <ServiceSearch />
                         <br />
-                        <Grid container spacing={2} justifyContent="space-around">
+                        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent="space-around">
                             {imageUrls.map((url, index) => (
                                 <ServiceItem
                                     key={index}

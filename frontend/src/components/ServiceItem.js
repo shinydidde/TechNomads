@@ -5,7 +5,7 @@ import { Grid } from '@mui/material';
 const ServiceItem = ({ imageUrl, altText }) => {
     return (
         <Grid item xs={1}>
-            <a href=''>
+            <a href='/'>
                 <img
                     className="ServiceItem"
                     src={imageUrl}

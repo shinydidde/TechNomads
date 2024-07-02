@@ -12,7 +12,7 @@ const ServiceSearch = () => {
     setQuery(event.target.value);
     if (event.target.value.length > 2) {  // Start searching when query length > 2
       try {
-        const response = await axios.get('/api/services/search', {
+        const response = await axios.get('https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/login', {
           params: { query: event.target.value }
         });
         setResults(response.data);

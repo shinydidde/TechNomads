@@ -7,6 +7,8 @@ import HomePage from './pages/HomePage';
 import theme from './theme'; // Assuming you have a theme file already
 import './i18n'; // Ensure this file initializes i18next
 import { useTranslation } from 'react-i18next';
+import GoogleLoginButton from './components/GoogleLoginButton';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   const { i18n } = useTranslation();
@@ -19,10 +21,13 @@ function App() {
 
   return (
     <ThemeProvider theme={customizedTheme}>
-      <div className="App">
-        <NavBar />
-        <HomePage />
-      </div>
+      <AuthProvider>
+        <div className="App">
+          <GoogleLoginButton />
+          <NavBar />
+          <HomePage />
+        </div>
+      </AuthProvider>
     </ThemeProvider>
   );
 }
