@@ -2,6 +2,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import GoogleLoginButton from './GoogleLoginButton';
 
 const NavBar = () => {
   const { t, i18n } = useTranslation();
@@ -31,6 +32,7 @@ const NavBar = () => {
         <Button color="inherit" onClick={() => changeLanguage('es')}>
           Espanol
         </Button>
+        <GoogleLoginButton/>
       </Toolbar>
     </AppBar>
   );

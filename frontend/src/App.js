@@ -1,14 +1,16 @@
 // src/App.js
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ServiceDetail from './pages/ServiceDetail';
+import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
+import Services from './pages/Services';
 import theme from './theme'; // Assuming you have a theme file already
 import './i18n'; // Ensure this file initializes i18next
 import { useTranslation } from 'react-i18next';
-import GoogleLoginButton from './components/GoogleLoginButton';
-import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   const { i18n } = useTranslation();
@@ -22,11 +24,16 @@ function App() {
   return (
     <ThemeProvider theme={customizedTheme}>
       <AuthProvider>
-        <div className="App">
-          <GoogleLoginButton />
-          <NavBar />
-          <HomePage />
-        </div>
+          <Router>
+            <div className="App">
+              <NavBar />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/service/:id" element={<ServiceDetail />} />
+              </Routes>
+            </div>
+          </Router>
       </AuthProvider>
     </ThemeProvider>
   );
