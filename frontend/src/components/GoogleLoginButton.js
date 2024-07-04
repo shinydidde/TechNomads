@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, signOut } from 'firebase/auth';
 import { auth, provider } from '../firebase';
+import { Button } from '@mui/material';
 
 const GoogleLoginButton = () => {
   const [user, setUser] = useState(null);
@@ -36,12 +37,9 @@ const GoogleLoginButton = () => {
   return (
     <div>
       {user ? (
-        <div>
-          <p>Welcome, {user.displayName}</p>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
+        <Button variant="contained" onClick={handleLogout} size="small" color="secondary"> Logout </Button>
       ) : (
-        <button onClick={handleLogin}>Login with Google</button>
+        <Button variant="contained" onClick={handleLogin} size="small" color="primary"> Login </Button>
       )}
     </div>
   );

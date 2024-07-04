@@ -18,3 +18,7 @@
 .serviceCardContainer {
     padding: 0 10px; /* Adjust padding as needed */
 }
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: white !important
+  }

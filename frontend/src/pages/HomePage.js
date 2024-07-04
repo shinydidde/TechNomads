@@ -1,22 +1,25 @@
 import React from 'react';
-import { Container, Box, Grid } from '@mui/material';
-// import { makeStyles } from '@mui/styles';
-// import { useTranslation } from 'react-i18next';
+import { Container, Box, Grid, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import { useTranslation } from 'react-i18next';
 import ServiceSearch from '../components/ServiceSearch';
 import ServiceItem from '../components/ServiceItem';
 import ImageSlider from '../components/ImageSlider';
 import '../components/styles.css';
 import MultiImagesSlider from '../components/MultiImagesSlider';
 import Banner from '../components/Banner';
+import { useAuth } from '../contexts/AuthContext';
 
-// const useStyles = makeStyles((theme) => ({
-//     text: {
-//         textAlign: theme.direction === 'rtl' ? 'right' : 'left',
-//     },
-// }));
+const useStyles = makeStyles((theme) => ({
+    text: {
+        textAlign: theme.direction === 'rtl' ? 'right' : 'left',
+    },
+}));
 
 const HomePage = () => {
-
+    const { t } = useTranslation();
+    const classes = useStyles();
+    const { currentUser } = useAuth();
     const imageUrls = [
         'https://achareh.co/cdnimages/production.achareh.ir/listings/maincategories/83a1b4c3-8114-4d19-892d-408ed758a1ea/3f411371-af7f-4b28-921f-8883c5c5126a-mainCategory-icon.png?x-img=v1/resize,w_250/optimize,q_80,lossless_false/autorotate',
         'https://achareh.co/cdnimages/production.achareh.ir/listings/maincategories/2812d427-3be1-4e43-81df-189eaca3f9e8/d838a3bf-77bb-426b-96ae-47105f260887-mainCategory-icon.png?x-img=v1/resize,w_250/optimize,q_80,lossless_false/autorotate',
@@ -40,10 +43,28 @@ const HomePage = () => {
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
-                        <br />
-                        {/* <Typography className={classes.text} variant="h2">{t('welcomeMessage')}</Typography>
-                        <Typography className={classes.text}>{t('description')}</Typography> */}
-                        <br />
+                        <Container>
+                        {currentUser ? ( // Check if user is logged in
+                            <div>
+                                 <br/>
+                                <Typography className={classes.text} variant="h2">
+                                    {t('welcomeMessage')}, {currentUser.displayName}
+                                </Typography>
+                                <Typography className={classes.text}>{t('description')}</Typography>
+                                <br/>
+                            </div>
+                        ) : (
+                            <div>
+                                 <br/>
+                                {/* If not logged in, show login options */}
+                                <Typography className={classes.text} variant="h2">
+                                    {t('welcomeMessage')}
+                                </Typography>
+                                <Typography className={classes.text}>{t('description')}</Typography>
+                                <br/>
+                            </div>
+                        )}
+                        </Container>
                         <ServiceSearch />
                         <br />
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent="space-around">
@@ -82,7 +103,7 @@ const HomePage = () => {
                 <br />
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
-                       <Banner imageUrl='https://s3.achareh.co/production.achareh.ir/delegates/bannercollections/15e49f2c-117d-4782-9cbe-d3e06559fbb1/1c09c7a5-059a-4b3a-aadb-47b6e16.jpg?x-img=v1/resize,w_2500/optimize,q_80,lossless_false/autorotate'/>
+                        <Banner imageUrl='https://s3.achareh.co/production.achareh.ir/delegates/bannercollections/15e49f2c-117d-4782-9cbe-d3e06559fbb1/1c09c7a5-059a-4b3a-aadb-47b6e16.jpg?x-img=v1/resize,w_2500/optimize,q_80,lossless_false/autorotate' />
                     </Grid>
                 </Grid>
                 <br />
@@ -94,10 +115,10 @@ const HomePage = () => {
                 <br />
                 <Grid container spacing={0}>
                     <Grid item xs={6}>
-                        <Banner imageUrl='https://s3.achareh.co/production.achareh.ir/delegates/bannercollections/188d63d0-6f45-4323-9b9f-529dc230a836/f33e8dc8-3ba7-415a-89a7-65e06e3.jpg?x-img=v1/resize,w_1250/optimize,q_80,lossless_false/autorotate'/>
+                        <Banner imageUrl='https://s3.achareh.co/production.achareh.ir/delegates/bannercollections/188d63d0-6f45-4323-9b9f-529dc230a836/f33e8dc8-3ba7-415a-89a7-65e06e3.jpg?x-img=v1/resize,w_1250/optimize,q_80,lossless_false/autorotate' />
                     </Grid>
                     <Grid item xs={6}>
-                        <Banner imageUrl='https://s3.achareh.co/production.achareh.ir/delegates/bannercollections/720c23ec-c279-4657-86de-a8c960f69983/8170da8f-a38a-4ac2-a7e4-b59e94b.jpg?x-img=v1/resize,w_1250/optimize,q_80,lossless_false/autorotate'/>
+                        <Banner imageUrl='https://s3.achareh.co/production.achareh.ir/delegates/bannercollections/720c23ec-c279-4657-86de-a8c960f69983/8170da8f-a38a-4ac2-a7e4-b59e94b.jpg?x-img=v1/resize,w_1250/optimize,q_80,lossless_false/autorotate' />
                     </Grid>
                 </Grid>
                 <br />
