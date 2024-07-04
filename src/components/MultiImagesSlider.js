@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ServiceCard from './ServiceCard';
-import '../components/styles.css';
+import './styles.css';
 
 const MultiImagesSlider = () => {
 

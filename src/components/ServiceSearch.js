@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Autocomplete, TextField, Container } from '@mui/material';
-import '../components/styles.css';
+import './styles.css';
 
 const ServiceSearch = () => {
   // eslint-disable-next-line no-unused-vars
