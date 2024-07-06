@@ -1,33 +1,43 @@
 import React from 'react';
-import { Container, Grid, Typography, Button } from '@mui/material';
-import { useTranslation } from 'react-i18next';
-import { Link, useParams } from 'react-router-dom';
+import { Container, Typography, Button } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import { Link } from 'react-router-dom';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    marginTop: theme.spacing(4),
+  },
+  section: {
+    marginBottom: theme.spacing(4),
+  },
+  paper: {
+    padding: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+}));
 
 const ServiceDetail = () => {
-    const { t } = useTranslation();
-    const { id } = useParams();
+  const classes = useStyles();
 
-    const service = {
-        id: id,
-        name: `Service ${id}`,
-        description: `This is a detailed description for Service ${id}.`,
-        price: 50,
-    };
-
-    return (
-        <Container>
-            <Grid container spacing={2}>
-                <Grid item xs={12}>
-                    <Typography variant="h4">{service.name}</Typography>
-                    <Typography>{service.description}</Typography>
-                    <Typography variant="h6">{t('price')}: ${service.price}</Typography>
-                    <Button variant="contained" color="primary" component={Link} to={`/services/${id}/book`}>
-                        {t('bookService')}
-                    </Button>
-                </Grid>
-            </Grid>
-        </Container>
-    );
+  return (
+    <Container className={classes.root}>
+      <Typography variant="h4" gutterBottom>
+        Service Detail
+      </Typography>
+      <Typography variant="h6">Classic bathroom cleaning</Typography>
+      <Typography variant="body1" paragraph>
+        Detailed description of the service...
+      </Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        component={Link}
+        to="/checkout"
+      >
+        Book Now
+      </Button>
+    </Container>
+  );
 };
 
 export default ServiceDetail;

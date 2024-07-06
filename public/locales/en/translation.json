@@ -1,48 +1,108 @@
 {
-    "appTitle": "Genie",
-    "welcomeMessage": "Welcome to Genie!",
-    "description": "This is a description of the app.",
-    "services": {
-        "professionalCleaning": "Professional cleaning",
-        "salon": "Salon",
-        "washingMachineRepair": "Washing machine repair",
-        "geyserRepair": "Geyser repair",
-        "carpenters": "Carpenters",
-        "plumbers": "Plumbers",
-        "roRepair": "RO repair",
-        "fullHomeCleaning": "Full home cleaning",
-        "electricians": "Electricians",
-        "refrigeratorRepair": "Refrigerator repair"
-      },
-      "location": "Location",
-      "selectLocation": "Select your location",
-      "selectLanguage": "Select Language",
-      "locations":{
-        "Carlow": "Carlow",
-        "Cavan": "Cavan",
-        "Clare": "Clare",
-        "Cork": "Cork",
-        "Donegal": "Donegal",
-        "Dublin": "Dublin",
-        "Galway": "Galway",
-        "Kerry": "Kerry",
-        "Kildare": "Kildare",
-        "Kilkenny": "Kilkenny",
-        "Laois": "Laois",
-        "Leitrim": "Leitrim",
-        "Limerick": "Limerick",
-        "Longford": "Longford",
-        "Louth": "Louth",
-        "Mayo": "Mayo",
-        "Meath": "Meath",
-        "Monaghan": "Monaghan",
-        "Offaly": "Offaly",
-        "Roscommon": "Roscommon",
-        "Sligo": "Sligo",
-        "Tipperary": "Tipperary",
-        "Waterford": "Waterford",
-        "Westmeath": "Westmeath",
-        "Wexford": "Wexford",
-        "Wicklow": "Wicklow"
-      }
+  "appTitle": "Genie",
+  "welcomeMessage": "Welcome to Genie!",
+  "description": "This is a description of the app.",
+  "services": [
+    {
+      "id": 1,
+      "title": "Professional cleaning",
+      "description": "Description of Professional cleaning",
+      "image": "https://via.placeholder.com/150",
+      "price": 100
+    },
+    {
+      "id": 2,
+      "title": "Salon",
+      "description": "Description of Salon",
+      "image": "https://via.placeholder.com/150",
+      "price": 200
+    },
+    {
+      "id": 3,
+      "title": "Washing machine repair",
+      "description": "Description of Washing machine repair",
+      "image": "https://via.placeholder.com/150",
+      "price": 300
+    },
+    {
+      "id": 4,
+      "title": "Geyser repair",
+      "description": "Description of Geyser repair",
+      "image": "https://via.placeholder.com/150",
+      "price": 400
+    },
+    {
+      "id": 5,
+      "title": "Carpenters",
+      "description": "Description of Carpenters",
+      "image": "https://via.placeholder.com/150",
+      "price": 500
+    },
+    {
+      "id": 6,
+      "title": "Plumbers",
+      "description": "Description of Plumbers",
+      "image": "https://via.placeholder.com/150",
+      "price": 600
+    },
+    {
+      "id": 7,
+      "title": "RO repair",
+      "description": "Description of RO repair",
+      "image": "https://via.placeholder.com/150",
+      "price": 700
+    },
+    {
+      "id": 8,
+      "title": "Full home cleaning",
+      "description": "Description of Full home cleaning",
+      "image": "https://via.placeholder.com/150",
+      "price": 800
+    },
+    {
+      "id": 9,
+      "title": "Electricians",
+      "description": "Description of Electricians",
+      "image": "https://via.placeholder.com/150",
+      "price": 900
+    },
+    {
+      "id": 10,
+      "title": "Refrigerator repair",
+      "description": "Description of Refrigerator repair",
+      "image": "https://via.placeholder.com/150",
+      "price": 500
+    }
+  ],
+  "location": "Location",
+  "selectLocation": "Select your location",
+  "selectLanguage": "Select Language",
+  "locations": {
+    "Carlow": "Carlow",
+    "Cavan": "Cavan",
+    "Clare": "Clare",
+    "Cork": "Cork",
+    "Donegal": "Donegal",
+    "Dublin": "Dublin",
+    "Galway": "Galway",
+    "Kerry": "Kerry",
+    "Kildare": "Kildare",
+    "Kilkenny": "Kilkenny",
+    "Laois": "Laois",
+    "Leitrim": "Leitrim",
+    "Limerick": "Limerick",
+    "Longford": "Longford",
+    "Louth": "Louth",
+    "Mayo": "Mayo",
+    "Meath": "Meath",
+    "Monaghan": "Monaghan",
+    "Offaly": "Offaly",
+    "Roscommon": "Roscommon",
+    "Sligo": "Sligo",
+    "Tipperary": "Tipperary",
+    "Waterford": "Waterford",
+    "Westmeath": "Westmeath",
+    "Wexford": "Wexford",
+    "Wicklow": "Wicklow"
   }
+}

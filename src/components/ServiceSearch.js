@@ -1,38 +1,39 @@
-// frontend/src/components/ServiceSearch.js
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Autocomplete, TextField, Container } from '@mui/material';
 import './styles.css';
 
 const ServiceSearch = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [query,setQuery] = useState('');
-  const [results, setResults] = useState(["Professional cleaning","Salon","Washing machine repair","Geyser repair","Carpenters","Plumbers","RO repair","Full home cleaning","Electricians","Refrigerator repair"]);
+  const { t } = useTranslation();
+  const services = t('services', { returnObjects: true });
 
-  const handleSearch = async (event) => {
-    setQuery(event.target.value);
-    if (event.target.value.length > 2) {  // Start searching when query length > 2
-      try {
-        const response = await axios.get('https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/services', {
-          params: { query: event.target.value }
-        });
-        setResults(response.data);
-      } catch (error) {
-        console.error('Error searching services:', error, query);
-      }
-      setResults([])
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    // Initialize results with all services on load
+    setResults(services);
+  }, [services]);
+
+  const handleSearch = (event) => {
+    const searchQuery = event.target.value.toLowerCase();
+    setQuery(searchQuery);
+
+    if (searchQuery.length > 2) {
+      const filteredServices = Object.values(services).filter(service =>
+        service.title.toLowerCase().includes(searchQuery)
+      );
+      setResults(filteredServices);
     } else {
       setResults([]);
     }
   };
-  console.log(results)
 
   return (
     <Container>
-      {/* <Typography variant="h4">Search Services</Typography> */}
       <Autocomplete
         freeSolo
-        options={results.map((service) => service)}
+        options={results.map((service) => service.title)}
         renderInput={(params) => (
           <TextField
             {...params}

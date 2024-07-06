@@ -59,7 +59,7 @@ Make sure you have the following installed on your system:
 │   ├── components/
 │   │   ├── NavBar.js
 │   │   ├── ServiceSearch.js
-│   │   └── ServiceItem.js
+│   │   └── ServiceIcon.js
 │   ├── pages/
 │   │   ├── HomePage.js
 │   │   ├── Services.js

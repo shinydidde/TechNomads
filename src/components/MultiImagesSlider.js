@@ -1,12 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Container } from '@mui/material';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import ServiceCard from './ServiceCard';
 import './styles.css';
+import ServiceCard from './ServiceCard';
 
 const MultiImagesSlider = () => {
+    const { t } = useTranslation();
+    const services = t('services', { returnObjects: true });
 
     const settings = {
         dots: false,
@@ -44,36 +47,10 @@ const MultiImagesSlider = () => {
     return (
         <Container>
             <Slider {...settings}>
-                    <ServiceCard
-                        image="https://achareh.co/cdnimages/production.achareh.ir/listings/services/080b11de-c907-491f-93e6-c5de2a95c5cb/banner.jpg?x-img=v1/resize,w_600/optimize,q_80,lossless_false/autorotate"
-                        title="Service 1"
-                        description="Description of Service 1"
-                    />
-                    <ServiceCard
-                        image="https://achareh.co/cdnimages/production.achareh.ir/listings/services/c37788fa-211b-4692-8553-80c7fc3b448e/banner.jpg?x-img=v1/resize,w_600/optimize,q_80,lossless_false/autorotate"
-                        title="Service 1"
-                        description="Description of Service 1"
-                    />
-                    <ServiceCard
-                        image="https://achareh.co/cdnimages/production.achareh.ir/listings/services/84915787-6b50-4199-986f-88137d4b7734/banner.jpg?x-img=v1/resize,w_600/optimize,q_80,lossless_false/autorotate"
-                        title="Service 1"
-                        description="Description of Service 1"
-                    />
-                    <ServiceCard
-                        image="https://achareh.co/cdnimages/production.achareh.ir/listings/services/4b4f661e-9775-4dbb-aaf4-7a7645f884f2/banner.jpg?x-img=v1/resize,w_600/optimize,q_80,lossless_false/autorotate"
-                        title="Service 1"
-                        description="Description of Service 1"
-                    />
-                    <ServiceCard
-                        image="https://achareh.co/cdnimages/production.achareh.ir/listings/services/84915787-6b50-4199-986f-88137d4b7734/banner.jpg?x-img=v1/resize,w_600/optimize,q_80,lossless_false/autorotate"
-                        title="Service 1"
-                        description="Description of Service 1"
-                    />
-                    <ServiceCard
-                        image="https://achareh.co/cdnimages/production.achareh.ir/listings/services/d5c4528c-04ce-41a9-b967-623f5f133049/banner.jpg?x-img=v1/resize,w_600/optimize,q_80,lossless_false/autorotate"
-                        title="Service 1"
-                        description="Description of Service 1"
-                    />
+            {services.map((service) => (
+                                <ServiceCard key={service.id} service={service} />
+
+                            ))}
             </Slider>
         </Container>
     );

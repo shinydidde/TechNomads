@@ -8,7 +8,7 @@ import ImageSlider from '../components/ImageSlider';
 import '../components/styles.css';
 import MultiImagesSlider from '../components/MultiImagesSlider';
 import Banner from '../components/Banner';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../context/AuthContext';
 
 const useStyles = makeStyles((theme) => ({
     text: {
@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 const HomePage = () => {
     const { t } = useTranslation();
+    const services = t('services', { returnObjects: true });
     const classes = useStyles();
     const { currentUser } = useAuth();
     const imageUrls = [
@@ -46,7 +47,6 @@ const HomePage = () => {
                         <Container>
                         {currentUser ? ( // Check if user is logged in
                             <div>
-                                 <br/>
                                 <Typography className={classes.text} variant="h2">
                                     {t('welcomeMessage')}, {currentUser.displayName}
                                 </Typography>
@@ -55,7 +55,6 @@ const HomePage = () => {
                             </div>
                         ) : (
                             <div>
-                                 <br/>
                                 {/* If not logged in, show login options */}
                                 <Typography className={classes.text} variant="h2">
                                     {t('welcomeMessage')}
@@ -65,7 +64,7 @@ const HomePage = () => {
                             </div>
                         )}
                         </Container>
-                        <ServiceSearch />
+                        <ServiceSearch services={services}/>
                         <br />
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent="space-around">
                             {imageUrls.map((url, index) => (

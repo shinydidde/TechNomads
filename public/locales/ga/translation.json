@@ -2,18 +2,78 @@
   "appTitle": "Mo Aip",
   "welcomeMessage": "Fáilte go dtí Mo Aip!",
   "description": "Seo cur síos ar an aip.",
-  "services": {
-    "professionalCleaning": "Glanadh gairmiúil",
-    "salon": "Salon",
-    "washingMachineRepair": "Deisiú meaisín níocháin",
-    "geyserRepair": "Deisiú teirmeach",
-    "carpenters": "Siúnéirí",
-    "plumbers": "Pluiméirí",
-    "roRepair": "Deisiú RO",
-    "fullHomeCleaning": "Glanadh iomlán tí",
-    "electricians": "Leictreoirí",
-    "refrigeratorRepair": "Deisiú cuisneáin"
-  },
+  "services": [
+    {
+      "id": 1,
+      "title": "Glanadh gairmiúil",
+      "description": "Cur síos ar Glanadh gairmiúil",
+      "image": "https://via.placeholder.com/150",
+      "price": 100
+    },
+    {
+      "id": 2,
+      "title": "Salon",
+      "description": "Cur síos ar Salon",
+      "image": "https://via.placeholder.com/150",
+      "price": 200
+    },
+    {
+      "id": 3,
+      "title": "Deisiú meaisín níocháin",
+      "description": "Cur síos ar Deisiú meaisín níocháin",
+      "image": "https://via.placeholder.com/150",
+      "price": 300
+    },
+    {
+      "id": 4,
+      "title": "Deisiú teirmeach",
+      "description": "Cur síos ar Deisiú teirmeach",
+      "image": "https://via.placeholder.com/150",
+      "price": 400
+    },
+    {
+      "id": 5,
+      "title": "Siúnéirí",
+      "description": "Cur síos ar Siúnéirí",
+      "image": "https://via.placeholder.com/150",
+      "price": 500
+    },
+    {
+      "id": 6,
+      "title": "Pluiméirí",
+      "description": "Cur síos ar Pluiméirí",
+      "image": "https://via.placeholder.com/150",
+      "price": 600
+    },
+    {
+      "id": 7,
+      "title": "Deisiú RO",
+      "description": "Cur síos ar Deisiú RO",
+      "image": "https://via.placeholder.com/150",
+      "price": 700
+    },
+    {
+      "id": 8,
+      "title": "Glanadh iomlán tí",
+      "description": "Cur síos ar Glanadh iomlán tí",
+      "image": "https://via.placeholder.com/150",
+      "price": 800
+    },
+    {
+      "id": 9,
+      "title": "Leictreoirí",
+      "description": "Cur síos ar Leictreoirí",
+      "image": "https://via.placeholder.com/150",
+      "price": 900
+    },
+    {
+      "id": 10,
+      "title": "Deisiú cuisneáin",
+      "description": "Cur síos ar Deisiú cuisneáin",
+      "image": "https://via.placeholder.com/150",
+      "price": 500
+    }
+  ],
   "location": "Suíomh",
   "selectLocation": "Roghnaigh do shuíomh",
   "selectLanguage": "Roghnaigh Teanga",

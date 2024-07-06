@@ -2,18 +2,78 @@
   "appTitle": "Mi Aplicación",
   "welcomeMessage": "¡Bienvenido a Mi Aplicación!",
   "description": "Esta es una descripción de la aplicación.",
-  "services": {
-    "professionalCleaning": "Limpieza profesional",
-    "salon": "Salón",
-    "washingMachineRepair": "Reparación de lavadora",
-    "geyserRepair": "Reparación de calentador",
-    "carpenters": "Carpinteros",
-    "plumbers": "Fontaneros",
-    "roRepair": "Reparación de RO",
-    "fullHomeCleaning": "Limpieza completa del hogar",
-    "electricians": "Electricistas",
-    "refrigeratorRepair": "Reparación de refrigerador"
-  },
+  "services": [
+    {
+      "id": 1,
+      "title": "Limpieza profesional",
+      "description": "Descripción de limpieza profesional",
+      "image": "https://via.placeholder.com/150",
+      "price": 100
+    },
+    {
+      "id": 2,
+      "title": "Salón",
+      "description": "Descripción de salón",
+      "image": "https://via.placeholder.com/150",
+      "price": 200
+    },
+    {
+      "id": 3,
+      "title": "Reparación de lavadoras",
+      "description": "Descripción de reparación de lavadoras",
+      "image": "https://via.placeholder.com/150",
+      "price": 300
+    },
+    {
+      "id": 4,
+      "title": "Reparación de calentadores",
+      "description": "Descripción de reparación de calentadores",
+      "image": "https://via.placeholder.com/150",
+      "price": 400
+    },
+    {
+      "id": 5,
+      "title": "Carpinteros",
+      "description": "Descripción de carpinteros",
+      "image": "https://via.placeholder.com/150",
+      "price": 500
+    },
+    {
+      "id": 6,
+      "title": "Fontaneros",
+      "description": "Descripción de fontaneros",
+      "image": "https://via.placeholder.com/150",
+      "price": 600
+    },
+    {
+      "id": 7,
+      "title": "Reparación de RO",
+      "description": "Descripción de reparación de RO",
+      "image": "https://via.placeholder.com/150",
+      "price": 700
+    },
+    {
+      "id": 8,
+      "title": "Limpieza completa del hogar",
+      "description": "Descripción de limpieza completa del hogar",
+      "image": "https://via.placeholder.com/150",
+      "price": 800
+    },
+    {
+      "id": 9,
+      "title": "Electricistas",
+      "description": "Descripción de electricistas",
+      "image": "https://via.placeholder.com/150",
+      "price": 900
+    },
+    {
+      "id": 10,
+      "title": "Reparación de refrigeradores",
+      "description": "Descripción de reparación de refrigeradores",
+      "image": "https://via.placeholder.com/150",
+      "price": 500
+    }
+  ],
   "location": "Ubicación",
   "selectLocation": "Seleccione su ubicación",
   "selectLanguage": "Seleccione idioma",

@@ -2,18 +2,78 @@
   "appTitle": "برنامه خوش آمدید",
   "welcomeMessage": "خوش آمدید به برنامه",
   "description": "این یک توضیح است که به زبان فارسی نمایش داده می شود.",
-  "services": {
-    "professionalCleaning": "نظافت حرفه‌ای",
-    "salon": "آرایشگاه",
-    "washingMachineRepair": "تعمیر ماشین لباسشویی",
-    "geyserRepair": "تعمیر آبگرمکن",
-    "carpenters": "نجاران",
-    "plumbers": "لوله‌کش‌ها",
-    "roRepair": "تعمیر RO",
-    "fullHomeCleaning": "تمیز کردن کامل خانه",
-    "electricians": "برق‌کاران",
-    "refrigeratorRepair": "تعمیر یخچال"
-  },
+  "services": [
+    {
+      "id": 1,
+      "title": "تمیز کردن حرفه‌ای",
+      "description": "توصیف تمیز کردن حرفه‌ای",
+      "image": "https://via.placeholder.com/150",
+      "price": 100
+    },
+    {
+      "id": 2,
+      "title": "آرایشگاه",
+      "description": "توصیف آرایشگاه",
+      "image": "https://via.placeholder.com/150",
+      "price": 200
+    },
+    {
+      "id": 3,
+      "title": "تعمیر ماشین لباسشویی",
+      "description": "توصیف تعمیر ماشین لباسشویی",
+      "image": "https://via.placeholder.com/150",
+      "price": 300
+    },
+    {
+      "id": 4,
+      "title": "تعمیر آبگرمکن",
+      "description": "توصیف تعمیر آبگرمکن",
+      "image": "https://via.placeholder.com/150",
+      "price": 400
+    },
+    {
+      "id": 5,
+      "title": "نجارها",
+      "description": "توصیف نجارها",
+      "image": "https://via.placeholder.com/150",
+      "price": 500
+    },
+    {
+      "id": 6,
+      "title": "لوله‌کش‌ها",
+      "description": "توصیف لوله‌کش‌ها",
+      "image": "https://via.placeholder.com/150",
+      "price": 600
+    },
+    {
+      "id": 7,
+      "title": "تعمیر RO",
+      "description": "توصیف تعمیر RO",
+      "image": "https://via.placeholder.com/150",
+      "price": 700
+    },
+    {
+      "id": 8,
+      "title": "تمیز کردن کامل خانه",
+      "description": "توصیف تمیز کردن کامل خانه",
+      "image": "https://via.placeholder.com/150",
+      "price": 800
+    },
+    {
+      "id": 9,
+      "title": "برق‌کارها",
+      "description": "توصیف برق‌کارها",
+      "image": "https://via.placeholder.com/150",
+      "price": 900
+    },
+    {
+      "id": 10,
+      "title": "تعمیر یخچال",
+      "description": "توصیف تعمیر یخچال",
+      "image": "https://via.placeholder.com/150",
+      "price": 500
+    }
+  ],
   "location": "موقعیت",
   "selectLocation": "موقعیت خود را انتخاب کنید",
   "selectLanguage": "زبان را انتخاب کنید",
