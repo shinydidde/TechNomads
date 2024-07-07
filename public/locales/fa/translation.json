@@ -104,5 +104,13 @@
     "Westmeath": "وستمث",
     "Wexford": "وکسفورد",
     "Wicklow": "ویکلو"
-  }
+  },
+  "checkout": "تسویه حساب",
+  "loginToBook": "برای رزرو خدمات لطفا وارد شوید یا ثبت نام کنید",
+  "paymentSummary": "خلاصه پرداخت",
+  "itemTotal": "جمع اقلام",
+  "taxesAndFee": "مالیات و هزینه‌ها",
+  "total": "مجموع",
+  "amountToPay": "مبلغ قابل پرداخت",
+  "remove": "حذف"
 }

@@ -104,5 +104,13 @@
     "Westmeath": "An Iarmhí",
     "Wexford": "Loch Garman",
     "Wicklow": "Cill Mhantáin"
-  }
+  },
+  "checkout": "Seiceáil Amach",
+  "loginToBook": "Chun an tseirbhís a chur in áirithe, logáil isteach nó cláraigh le do thoil",
+  "paymentSummary": "Achoimre Íocaíochta",
+  "itemTotal": "Iomlán Míreanna",
+  "taxesAndFee": "Cánacha agus Táillí",
+  "total": "Iomlán",
+  "amountToPay": "Méid le hÍoc",
+  "remove": "Bain"
 }

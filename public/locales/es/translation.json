@@ -104,5 +104,13 @@
     "Westmeath": "Westmeath",
     "Wexford": "Wexford",
     "Wicklow": "Wicklow"
-  }
+  },
+  "checkout": "Revisar",
+  "loginToBook": "Para reservar el servicio, por favor inicie sesión o regístrese",
+  "paymentSummary": "Resumen del pago",
+  "itemTotal": "Total de artículos",
+  "taxesAndFee": "Impuestos y tarifas",
+  "total": "Total",
+  "amountToPay": "Cantidad a pagar",
+  "remove": "Eliminar"
 }

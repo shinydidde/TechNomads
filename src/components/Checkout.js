@@ -1,9 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { Container, Typography, Box, Button, Divider, Paper } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 import { CartContext } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import GoogleLoginButton from './GoogleLoginButton';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,13 +43,16 @@ const useStyles = makeStyles((theme) => ({
 
 const Checkout = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
   const { currentUser } = useAuth();
-  const { cart, removeFromCart, calculateTotal } = useContext(CartContext);
-
-  const [itemCounts, setItemCounts] = useState(cart.reduce((acc, item) => {
-    acc[item.id] = 1;
-    return acc;
-  }, {}));
+  const { cart, removeFromCart, calculateTotal, clearCart } = useContext(CartContext);
+  const navigate = useNavigate();
+  const [itemCounts, setItemCounts] = useState(
+    cart.reduce((acc, item) => {
+      acc[item.id] = 1;
+      return acc;
+    }, {})
+  );
 
   const handleIncrease = (id) => {
     setItemCounts((prevCounts) => ({
@@ -62,31 +68,62 @@ const Checkout = () => {
     }));
   };
 
+  const handleRemove = (id) => {
+    removeFromCart(id);
+    setItemCounts((prevCounts) => {
+      const updatedCounts = { ...prevCounts };
+      delete updatedCounts[id];
+      return updatedCounts;
+    });
+  };
+
   const totalAmount = calculateTotal() + 49; // Example fixed tax and fee
+
+  const handleCheckout = async () => {
+    if (!currentUser) {
+      alert(t('loginToBook'));
+      return;
+    }
+
+    try {
+      await axios.post('http://localhost:5000/api/booking', {
+        userId: currentUser.uid,
+        services: cart.map((service) => ({
+          id: service.id,
+          title: t(service.title), // Using translation key for service title
+          price: service.price,
+          count: itemCounts[service.id],
+        })),
+      });
+
+      clearCart(); // Assuming clearCart function clears the cart in CartContext
+      navigate('/confirmation'); // Navigate to confirmation page after successful booking
+    } catch (error) {
+      console.error('Error during booking:', error);
+    }
+  };
+
+  // Check if cart is empty
+  if (cart.length === 0) {
+    navigate('/services'); // Redirect to services page if cart is empty
+    return null; // Optionally return a message or null to prevent rendering
+  }
 
   return (
     <Container className={classes.root}>
       <Typography variant="h4" gutterBottom>
-        Checkout
+        {t('checkout')}
       </Typography>
       {!currentUser ? (
         <Paper className={classes.paper}>
-          <Typography variant="body1">To book the service, please login or sign up</Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.loginButton}
-            component={Link}
-            to="/login"
-          >
-            Login
-          </Button>
+          <Typography variant="body1">{t('loginToBook')}</Typography><br/>
+          <GoogleLoginButton/>
         </Paper>
       ) : (
         <div>
           {cart.map((service) => (
             <Paper className={classes.paper} key={service.id}>
-              <Typography variant="h6">{service.title}</Typography>
+              <Typography variant="h6">{t(service.title)}</Typography>
               <Box className={classes.item}>
                 <Typography variant="body1">₹{service.price}</Typography>
                 <Box className={classes.itemCount}>
@@ -109,35 +146,39 @@ const Checkout = () => {
                     variant="outlined"
                     color="secondary"
                     className={classes.itemCountButton}
-                    onClick={() => removeFromCart(service.id)}
+                    onClick={() => handleRemove(service.id)}
                   >
-                    Remove
+                    {t('remove')}
                   </Button>
                 </Box>
               </Box>
             </Paper>
           ))}
           <Paper className={classes.summary}>
-            <Typography variant="h6">Payment summary</Typography>
+            <Typography variant="h6">{t('paymentSummary')}</Typography>
             <Box className={classes.item}>
-              <Typography variant="body1">Item total</Typography>
+              <Typography variant="body1">{t('itemTotal')}</Typography>
               <Typography variant="body1">₹{calculateTotal()}</Typography>
             </Box>
             <Box className={classes.item}>
-              <Typography variant="body1">Taxes and Fee</Typography>
+              <Typography variant="body1">{t('taxesAndFee')}</Typography>
               <Typography variant="body1">₹49</Typography>
             </Box>
             <Divider className={classes.section} />
             <Box className={classes.item}>
-              <Typography variant="body1">Total</Typography>
+              <Typography variant="body1">{t('total')}</Typography>
               <Typography variant="body1">₹{totalAmount}</Typography>
             </Box>
             <Box className={classes.item}>
-              <Typography variant="body1" fontWeight="bold">Amount to pay</Typography>
-              <Typography variant="body1" fontWeight="bold">₹{totalAmount}</Typography>
-            </Box>
-            <Button variant="text" color="primary">
-              View breakup
+              <Typography variant="body1" fontWeight="bold">
+                {t('amountToPay')}
+              </Typography>
+              <Typography variant="body1" fontWeight="bold">
+                ₹{totalAmount}
+              </Typography>
+            </Box><br/>
+            <Button variant="contained" color="secondary" onClick={handleCheckout}>
+              {t('checkout')}
             </Button>
           </Paper>
         </div>

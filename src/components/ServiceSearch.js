@@ -7,6 +7,7 @@ const ServiceSearch = () => {
   const { t } = useTranslation();
   const services = t('services', { returnObjects: true });
 
+  // eslint-disable-next-line
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 

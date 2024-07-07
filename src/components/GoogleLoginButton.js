@@ -37,9 +37,9 @@ const GoogleLoginButton = () => {
   return (
     <div>
       {user ? (
-        <Button variant="contained" onClick={handleLogout} size="small" color="secondary"> Logout </Button>
+        <Button variant="contained" onClick={handleLogout} size="small" color="primary"> Logout </Button>
       ) : (
-        <Button variant="contained" onClick={handleLogin} size="small" color="primary"> Login </Button>
+        <Button variant="contained" onClick={handleLogin} size="small" color="secondary"> Login </Button>
       )}
     </div>
   );

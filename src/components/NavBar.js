@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { AppBar, Toolbar, Select, MenuItem, Box, Typography, IconButton } from '@mui/material';
+import { AppBar, Toolbar, Select, MenuItem, Box, Typography, IconButton, Badge } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import GoogleLoginButton from './GoogleLoginButton';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
-import '../App.css';
-
 
 const NavBar = ({ onLocationChange, onLanguageChange }) => {
   const { t, i18n } = useTranslation();
@@ -17,7 +15,7 @@ const NavBar = ({ onLocationChange, onLanguageChange }) => {
   const cartItemCount = cart.length;
 
   useEffect(() => {
-    onLocationChange('Dublin'); // Notify parent component of default location
+    onLocationChange('Dublin');
   }, [onLocationChange]);
 
   const handleLocationChange = (event) => {
@@ -64,12 +62,15 @@ const NavBar = ({ onLocationChange, onLanguageChange }) => {
           <MenuItem value="es">Español</MenuItem>
           <MenuItem value="fa">فارسی</MenuItem>
         </Select>
-        <Link to="/checkout">
-          <IconButton>
+        <IconButton
+          component={Link}
+          to={cartItemCount > 0 ? '/checkout' : '/'}
+          color="inherit"
+        >
+          <Badge badgeContent={cartItemCount} color="error">
             <ShoppingCartIcon />
-            {cartItemCount > 0 && <span className="CartItemCount">{cartItemCount}</span>}
-          </IconButton>
-        </Link>
+          </Badge>
+        </IconButton>
         <GoogleLoginButton />
       </Toolbar>
     </AppBar>
