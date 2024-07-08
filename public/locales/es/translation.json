@@ -143,5 +143,9 @@
   "confirm": "Confirmar",
   "totalAmount": "Monto Total",
   "fillMobileField": "Complete el campo de teléfono móvil",
-  "invalidPhoneNumber": "Número de teléfono no válido"
+  "invalidPhoneNumber": "Número de teléfono no válido",
+  "bookingConfirmation": "Confirmación de Reserva",
+  "bookingId": "ID de Reserva",
+  "servicesBooked": "Servicios Reservados",
+  "loginToViewBooking": "Por favor, inicie sesión para ver los detalles de su reserva"
 }

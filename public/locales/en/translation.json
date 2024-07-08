@@ -143,5 +143,9 @@
   "confirm": "Confirm",
   "totalAmount": "Total Amount",
   "fillMobileField": "Fill Mobile Field",
-  "invalidPhoneNumber": "Invalid Phone Number"
+  "invalidPhoneNumber": "Invalid Phone Number",
+  "bookingConfirmation": "Booking Confirmation",
+  "bookingId": "Booking ID",
+  "servicesBooked": "Services Booked",
+  "loginToViewBooking": "Please log in to view your booking details"
 }

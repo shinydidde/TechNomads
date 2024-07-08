@@ -14,77 +14,77 @@
   "electricians": "برق‌کارها",
   "refrigeratorRepair": "تعمیر یخچال",
   "services": [
-  {
-    "id": 1,
-    "title": "professionalCleaning",
-    "description": "خدمات نظافت حرفه‌ای ما اطمینان حاصل می‌کند که خانه یا دفتر شما کاملاً تمیز و بهداشتی باشد. کارکنان آموزش‌دیده ما از محصولات و تجهیزات تمیزکاری با کیفیت بالا برای تمیزکاری دقیق استفاده می‌کنند که بر اساس نیازهای خاص شما تنظیم شده است.",
-    "image": "https://cdn-dajjm.nitrocdn.com/pVZOCeHOuERXSqjVfCKASkdWfidALwiK/assets/images/optimized/rev-e4c7922/dublin-housecleaning.ie/wp-content/uploads/2022/10/maid-cleaning-OPT.jpg",
-    "price": 10
-  },
-  {
-    "id": 2,
-    "title": "salon",
-    "description": "خدمات سالن زیبایی ما طیف گسترده‌ای از درمان‌های مراقبت شخصی را ارائه می‌دهد. آرایشگران و متخصصان زیبایی حرفه‌ای ما اینجا هستند تا به شما کمک کنند که بهترین ظاهر و احساس را داشته باشید.",
-    "image": "https://images.fresha.com/lead-images/placeholders/hair-salon-150.jpg?class=width-small",
-    "price": 20
-  },
-  {
-    "id": 3,
-    "title": "washingMachineRepair",
-    "description": "ما خدمات تعمیر ماشین لباسشویی را برای حل هر مشکلی که دستگاه شما ممکن است داشته باشد ارائه می‌دهیم. تکنسین‌های خبره ما اطمینان حاصل می‌کنند که ماشین لباسشویی شما دوباره به خوبی کار کند.",
-    "image": "https://a.mktgcdn.com/p/NsPkglPVhJGfhChEABxJ7_bwd6HNGgZ80K5AO_wPpJQ/1800x1200.jpg",
-    "price": 30
-  },
-  {
-    "id": 4,
-    "title": "geyserRepair",
-    "description": "متخصصان تعمیر بخاری ما اطمینان حاصل می‌کنند که بخاری شما به‌طور کارآمد و ایمن کار کند. ما تشخیص‌های دقیق و راه‌حل‌های سریع را ارائه می‌دهیم.",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu6gtXHXSJpEZUqLr_gLFCf5kVfk6EqGLFXQ&s",
-    "price": 40
-  },
-  {
-    "id": 5,
-    "title": "carpenters",
-    "description": "خدمات نجاری ما شامل همه چیز، از تعمیرات جزئی تا پروژه‌های سفارشی است. نجاران حرفه‌ای ما به کیفیت و دقت در هر کاری متعهد هستند.",
-    "image": "https://abclive1.s3.amazonaws.com/b5c790ef-f5ea-4649-9ba0-58c3540439c2/productimage/P-0601372860___1___L.jpg",
-    "price": 50
-  },
-  {
-    "id": 6,
-    "title": "plumbers",
-    "description": "لوله‌کش‌های ما برای تمامی نیازهای لوله‌کشی شما در دسترس هستند، چه نشت آب، نصب لوله‌ها یا نگهداری عمومی. ما خدمات سریع و کارآمد را تضمین می‌کنیم.",
-    "image": "https://images.airtasker.com/v7/https://airtasker-seo-assets-prod.s3.amazonaws.com/en_AU/1689671279525-plumber-near-me.jpg",
-    "price": 60
-  },
-  {
-    "id": 7,
-    "title": "rORepair",
-    "description": "خدمات تعمیر دستگاه تصفیه آب ما اطمینان حاصل می‌کند که سیستم تصفیه آب شما به درستی کار کند و آب تمیز و ایمن برای خانه شما فراهم کند.",
-    "image": "https://repairguru.in/wp-content/uploads/2022/06/ro-water-purifier-maintenance-services.png",
-    "price": 70
-  },
-  {
-    "id": 8,
-    "title": "fullHomeCleaning",
-    "description": "خدمات نظافت کامل منزل ما همه مناطق خانه شما را پوشش می‌دهد تا اطمینان حاصل شود که هر گوشه‌ای تمیز و مرتب باشد. ما از محصولات و تکنیک‌های تمیزکاری با کیفیت بالا استفاده می‌کنیم.",
-    "image": "https://amanetcleaners.ie/wp-content/uploads/2019/03/home-deep-cleaning-sofa-cleaning-bathroom-cleaning-500x500.jpg",
-    "price": 80
-  },
-  {
-    "id": 9,
-    "title": "electricians",
-    "description": "برق‌کارهای ما برای انجام همه نوع کارهای برقی آموزش دیده‌اند، از تعمیرات جزئی تا نصب‌های پیچیده. ما در هر پروژه ایمنی و حرفه‌ای بودن را تضمین می‌کنیم.",
-    "image": "https://www.neit.edu/wp-content/uploads/2021/08/Electrician-at-work-e1643101212741.jpg",
-    "price": 90
-  },
-  {
-    "id": 10,
-    "title": "refrigeratorRepair",
-    "description": "ما خدمات تعمیر یخچال را برای حل هر مشکلی ارائه می‌دهیم و اطمینان حاصل می‌کنیم که دستگاه شما به‌طور بهینه کار کند.",
-    "image": "https://allstateappliancerepair.com/wp-content/uploads/2022/07/Refrigerator-Repair-1200x675-1.jpeg",
-    "price": 50
-  }
-],
+    {
+      "id": 1,
+      "title": "professionalCleaning",
+      "description": "خدمات نظافت حرفه‌ای ما اطمینان حاصل می‌کند که خانه یا دفتر شما کاملاً تمیز و بهداشتی باشد. کارکنان آموزش‌دیده ما از محصولات و تجهیزات تمیزکاری با کیفیت بالا برای تمیزکاری دقیق استفاده می‌کنند که بر اساس نیازهای خاص شما تنظیم شده است.",
+      "image": "https://cdn-dajjm.nitrocdn.com/pVZOCeHOuERXSqjVfCKASkdWfidALwiK/assets/images/optimized/rev-e4c7922/dublin-housecleaning.ie/wp-content/uploads/2022/10/maid-cleaning-OPT.jpg",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "title": "salon",
+      "description": "خدمات سالن زیبایی ما طیف گسترده‌ای از درمان‌های مراقبت شخصی را ارائه می‌دهد. آرایشگران و متخصصان زیبایی حرفه‌ای ما اینجا هستند تا به شما کمک کنند که بهترین ظاهر و احساس را داشته باشید.",
+      "image": "https://images.fresha.com/lead-images/placeholders/hair-salon-150.jpg?class=width-small",
+      "price": 20
+    },
+    {
+      "id": 3,
+      "title": "washingMachineRepair",
+      "description": "ما خدمات تعمیر ماشین لباسشویی را برای حل هر مشکلی که دستگاه شما ممکن است داشته باشد ارائه می‌دهیم. تکنسین‌های خبره ما اطمینان حاصل می‌کنند که ماشین لباسشویی شما دوباره به خوبی کار کند.",
+      "image": "https://a.mktgcdn.com/p/NsPkglPVhJGfhChEABxJ7_bwd6HNGgZ80K5AO_wPpJQ/1800x1200.jpg",
+      "price": 30
+    },
+    {
+      "id": 4,
+      "title": "geyserRepair",
+      "description": "متخصصان تعمیر بخاری ما اطمینان حاصل می‌کنند که بخاری شما به‌طور کارآمد و ایمن کار کند. ما تشخیص‌های دقیق و راه‌حل‌های سریع را ارائه می‌دهیم.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu6gtXHXSJpEZUqLr_gLFCf5kVfk6EqGLFXQ&s",
+      "price": 40
+    },
+    {
+      "id": 5,
+      "title": "carpenters",
+      "description": "خدمات نجاری ما شامل همه چیز، از تعمیرات جزئی تا پروژه‌های سفارشی است. نجاران حرفه‌ای ما به کیفیت و دقت در هر کاری متعهد هستند.",
+      "image": "https://abclive1.s3.amazonaws.com/b5c790ef-f5ea-4649-9ba0-58c3540439c2/productimage/P-0601372860___1___L.jpg",
+      "price": 50
+    },
+    {
+      "id": 6,
+      "title": "plumbers",
+      "description": "لوله‌کش‌های ما برای تمامی نیازهای لوله‌کشی شما در دسترس هستند، چه نشت آب، نصب لوله‌ها یا نگهداری عمومی. ما خدمات سریع و کارآمد را تضمین می‌کنیم.",
+      "image": "https://images.airtasker.com/v7/https://airtasker-seo-assets-prod.s3.amazonaws.com/en_AU/1689671279525-plumber-near-me.jpg",
+      "price": 60
+    },
+    {
+      "id": 7,
+      "title": "rORepair",
+      "description": "خدمات تعمیر دستگاه تصفیه آب ما اطمینان حاصل می‌کند که سیستم تصفیه آب شما به درستی کار کند و آب تمیز و ایمن برای خانه شما فراهم کند.",
+      "image": "https://repairguru.in/wp-content/uploads/2022/06/ro-water-purifier-maintenance-services.png",
+      "price": 70
+    },
+    {
+      "id": 8,
+      "title": "fullHomeCleaning",
+      "description": "خدمات نظافت کامل منزل ما همه مناطق خانه شما را پوشش می‌دهد تا اطمینان حاصل شود که هر گوشه‌ای تمیز و مرتب باشد. ما از محصولات و تکنیک‌های تمیزکاری با کیفیت بالا استفاده می‌کنیم.",
+      "image": "https://amanetcleaners.ie/wp-content/uploads/2019/03/home-deep-cleaning-sofa-cleaning-bathroom-cleaning-500x500.jpg",
+      "price": 80
+    },
+    {
+      "id": 9,
+      "title": "electricians",
+      "description": "برق‌کارهای ما برای انجام همه نوع کارهای برقی آموزش دیده‌اند، از تعمیرات جزئی تا نصب‌های پیچیده. ما در هر پروژه ایمنی و حرفه‌ای بودن را تضمین می‌کنیم.",
+      "image": "https://www.neit.edu/wp-content/uploads/2021/08/Electrician-at-work-e1643101212741.jpg",
+      "price": 90
+    },
+    {
+      "id": 10,
+      "title": "refrigeratorRepair",
+      "description": "ما خدمات تعمیر یخچال را برای حل هر مشکلی ارائه می‌دهیم و اطمینان حاصل می‌کنیم که دستگاه شما به‌طور بهینه کار کند.",
+      "image": "https://allstateappliancerepair.com/wp-content/uploads/2022/07/Refrigerator-Repair-1200x675-1.jpeg",
+      "price": 50
+    }
+  ],
   "location": "موقعیت",
   "selectLocation": "موقعیت خود را انتخاب کنید",
   "selectLanguage": "زبان را انتخاب کنید",
@@ -143,5 +143,9 @@
   "confirm": "تایید",
   "totalAmount": "مبلغ کل",
   "fillMobileField": "فیلد موبایل را پر کنید",
-  "invalidPhoneNumber": "شماره موبایل نامعتبر است"
+  "invalidPhoneNumber": "شماره موبایل نامعتبر است",
+  "bookingConfirmation": "تأیید رزرو",
+  "bookingId": "شناسه رزرو",
+  "servicesBooked": "خدمات رزرو شده",
+  "loginToViewBooking": "لطفا برای مشاهده جزئیات رزرو خود وارد شوید"
 }

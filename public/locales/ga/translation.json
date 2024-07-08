@@ -143,5 +143,9 @@
   "confirm": "Deimhnigh",
   "totalAmount": "Uasmhéid Iomlán",
   "fillMobileField": "Líon an Ghortaí Fón",
-  "invalidPhoneNumber": "Uimhir gutháin neamhbhailí"
+  "invalidPhoneNumber": "Uimhir gutháin neamhbhailí",
+  "bookingConfirmation": "Deimhniú Áirithinte",
+  "bookingId": "ID Áirithinte",
+  "servicesBooked": "Seirbhísí Áirithinte",
+  "loginToViewBooking": "Logáil isteach chun sonraí do áirithinte a fheiceáil"
 }
