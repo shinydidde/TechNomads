@@ -16,6 +16,7 @@
     "firebase": "^10.12.2",
     "i18next": "^23.11.5",
     "i18next-xhr-backend": "^3.2.2",
+    "mui-tel-input": "^5.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^14.1.2",
@@ -51,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "ajv": "^7.2.4"
   }
 }

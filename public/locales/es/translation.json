@@ -7,70 +7,70 @@
       "id": 1,
       "title": "Limpieza profesional",
       "description": "Descripción de limpieza profesional",
-      "image": "https://via.placeholder.com/150",
+      "image": "https://cdn-dajjm.nitrocdn.com/pVZOCeHOuERXSqjVfCKASkdWfidALwiK/assets/images/optimized/rev-e4c7922/dublin-housecleaning.ie/wp-content/uploads/2022/10/maid-cleaning-OPT.jpg",
       "price": 100
     },
     {
       "id": 2,
       "title": "Salón",
       "description": "Descripción de salón",
-      "image": "https://via.placeholder.com/150",
+      "image": "https://images.fresha.com/lead-images/placeholders/hair-salon-150.jpg?class=width-small",
       "price": 200
     },
     {
       "id": 3,
       "title": "Reparación de lavadoras",
       "description": "Descripción de reparación de lavadoras",
-      "image": "https://via.placeholder.com/150",
+      "image": "https://a.mktgcdn.com/p/NsPkglPVhJGfhChEABxJ7_bwd6HNGgZ80K5AO_wPpJQ/1800x1200.jpg",
       "price": 300
     },
     {
       "id": 4,
       "title": "Reparación de calentadores",
       "description": "Descripción de reparación de calentadores",
-      "image": "https://via.placeholder.com/150",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu6gtXHXSJpEZUqLr_gLFCf5kVfk6EqGLFXQ&s",
       "price": 400
     },
     {
       "id": 5,
       "title": "Carpinteros",
       "description": "Descripción de carpinteros",
-      "image": "https://via.placeholder.com/150",
+      "image": "https://abclive1.s3.amazonaws.com/b5c790ef-f5ea-4649-9ba0-58c3540439c2/productimage/P-0601372860___1___L.jpg",
       "price": 500
     },
     {
       "id": 6,
       "title": "Fontaneros",
       "description": "Descripción de fontaneros",
-      "image": "https://via.placeholder.com/150",
+      "image": "https://images.airtasker.com/v7/https://airtasker-seo-assets-prod.s3.amazonaws.com/en_AU/1689671279525-plumber-near-me.jpg",
       "price": 600
     },
     {
       "id": 7,
       "title": "Reparación de RO",
       "description": "Descripción de reparación de RO",
-      "image": "https://via.placeholder.com/150",
+      "image": "https://repairguru.in/wp-content/uploads/2022/06/ro-water-purifier-maintenance-services.png",
       "price": 700
     },
     {
       "id": 8,
       "title": "Limpieza completa del hogar",
       "description": "Descripción de limpieza completa del hogar",
-      "image": "https://via.placeholder.com/150",
+      "image": "https://amanetcleaners.ie/wp-content/uploads/2019/03/home-deep-cleaning-sofa-cleaning-bathroom-cleaning-500x500.jpg",
       "price": 800
     },
     {
       "id": 9,
       "title": "Electricistas",
       "description": "Descripción de electricistas",
-      "image": "https://via.placeholder.com/150",
+      "image": "https://www.neit.edu/wp-content/uploads/2021/08/Electrician-at-work-e1643101212741.jpg",
       "price": 900
     },
     {
       "id": 10,
       "title": "Reparación de refrigeradores",
       "description": "Descripción de reparación de refrigeradores",
-      "image": "https://via.placeholder.com/150",
+      "image": "https://allstateappliancerepair.com/wp-content/uploads/2022/07/Refrigerator-Repair-1200x675-1.jpeg",
       "price": 500
     }
   ],

@@ -9,7 +9,7 @@ import ServiceCard from './ServiceCard';
 
 const MultiImagesSlider = () => {
     const { t } = useTranslation();
-    const services = t('services', { returnObjects: true });
+    const services = t('services', { returnObjects: true }); // Assuming services are fetched from translations
 
     const settings = {
         dots: false,
@@ -47,10 +47,9 @@ const MultiImagesSlider = () => {
     return (
         <Container>
             <Slider {...settings}>
-            {services.map((service) => (
-                                <ServiceCard key={service.id} service={service} />
-
-                            ))}
+                {services.map((service) => (
+                    <ServiceCard key={service.id} service={service} />
+                ))}
             </Slider>
         </Container>
     );

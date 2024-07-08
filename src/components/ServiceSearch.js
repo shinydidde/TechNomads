@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Autocomplete, TextField, Container } from '@mui/material';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import './styles.css';
 
 const ServiceSearch = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate(); // Use useNavigate instead of useHistory
   const services = t('services', { returnObjects: true });
 
-  // eslint-disable-next-line
-  const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,6 @@ const ServiceSearch = () => {
 
   const handleSearch = (event) => {
     const searchQuery = event.target.value.toLowerCase();
-    setQuery(searchQuery);
 
     if (searchQuery.length > 2) {
       const filteredServices = Object.values(services).filter(service =>
@@ -30,11 +29,19 @@ const ServiceSearch = () => {
     }
   };
 
+  const handleSelectService = (title) => {
+    const selectedService = services.find(service => service.title === title);
+    if (selectedService) {
+      navigate(`/service/${selectedService.id}`); // Use navigate to navigate to the selected service
+    }
+  };
+
   return (
     <Container>
       <Autocomplete
         freeSolo
         options={results.map((service) => service.title)}
+        getOptionLabel={(option) => option}
         renderInput={(params) => (
           <TextField
             {...params}
@@ -44,6 +51,11 @@ const ServiceSearch = () => {
             className='SearchBar'
           />
         )}
+        onChange={(event, value) => {
+          if (value) {
+            handleSelectService(value);
+          }
+        }}
       />
     </Container>
   );

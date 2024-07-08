@@ -1,21 +1,36 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardMedia, CardContent, Typography, Grid, Button } from '@mui/material';
-import { makeStyles } from '@mui/styles'; // Import makeStyles from @mui/styles
+import { Card, CardMedia, CardContent, Typography, Grid, Button, Box } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { CartContext } from '../context/CartContext';
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    height: 300, // Adjust the height as per your requirement
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    height: '100%',
+    minHeight: '360px'
   },
   media: {
-    height: 150, // Adjust the image height within the card
-    objectFit: 'cover', // Ensure the image covers the designated area
+    height: 150,
+    objectFit: 'cover',
+  },
+  cardContent: {
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+  },
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: theme.spacing(2),
   },
 }));
 
 const ServiceCard = ({ service }) => {
-  const { cart, addToCart } = useContext(CartContext);
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
   const classes = useStyles();
 
   const isInCart = cart.some(item => item.id === service.id);
@@ -34,23 +49,23 @@ const ServiceCard = ({ service }) => {
             image={service.image}
             className={classes.media}
           />
-          <CardContent>
+          <CardContent className={classes.cardContent}>
             <Typography gutterBottom variant="h5" component="div">
               {service.title}
             </Typography>
             <Typography variant="body2" color="textSecondary">
               {service.description}
             </Typography>
-            <br/>
-            <Button
-              variant="outlined"
-              color="secondary"
-              size='small'
-              onClick={() => addToCart(service)}
-              disabled={isInCart}
-            >
-              {isInCart ? "Added" : "Add to Cart"}
-            </Button>
+            <Box className={classes.buttonContainer}>
+              <Button
+                variant={isInCart ? "outlined" : "contained"}
+                color="secondary"
+                size="small"
+                onClick={() => isInCart ? removeFromCart(service.id) : addToCart(service)}
+              >
+                {isInCart ? "Remove from Cart" : "Add to Cart"}
+              </Button>
+            </Box>
           </CardContent>
         </Card>
       </Grid>

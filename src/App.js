@@ -14,6 +14,8 @@ import { useTranslation } from 'react-i18next';
 import BookingForm from './components/BookingForm';
 import Checkout from './components/Checkout';
 import { CartProvider, CartContext } from './context/CartContext';
+import BookingConfirmation from './pages/BookingConfirmation';
+import Bookings from './pages/Bookings';
 
 
 function App() {
@@ -54,6 +56,8 @@ function App() {
                 <Route path="/service/:id" element={<ServiceDetail location={location} />} />
                 <Route path="/services/:id/book" element={<BookingForm location={location} />} />
                 <Route path="/checkout" element={<Checkout location={location} />} />
+                <Route path="/confirmation" element={<BookingConfirmation location={location} />} />
+                <Route path="/bookings" element={<Bookings />} />
               </Routes>
             </div>
           </div>

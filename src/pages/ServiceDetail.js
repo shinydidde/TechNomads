@@ -52,7 +52,7 @@ const ServiceDetail = () => {
     <Container className={classes.root}>
       <Typography variant="h4">{service.title}</Typography>
       <Box mt={2}>
-        <img src={service.image} alt={service.title} className={classes.image} />
+        <img width={100} src={service.image} alt={service.title} className={classes.image} />
       </Box>
       <Typography variant="body1" mt={2}>
         {service.description}
@@ -73,7 +73,7 @@ const ServiceDetail = () => {
         ) : (
           <Button
             variant="contained"
-            color="primary"
+            color="secondary"
             onClick={handleAddToCart}
             className={classes.button}
           >
