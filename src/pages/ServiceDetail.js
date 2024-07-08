@@ -26,7 +26,7 @@ const ServiceDetail = () => {
   const { addToCart, cart, removeFromCart } = useContext(CartContext);
 
   // Assuming your services are defined in translations
-  const services = t('services', { returnObjects: true });
+  const services = t('servicesList', { returnObjects: true });
 
   // Find the selected service by id
   const service = services.find((s) => s.id === parseInt(id));

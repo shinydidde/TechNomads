@@ -13,7 +13,8 @@
   "fullHomeCleaning": "Full Home Cleaning",
   "electricians": "Electricians",
   "refrigeratorRepair": "Refrigerator Repair",
-  "services": [
+  "services": "Services",
+  "servicesList": [
     {
       "id": 1,
       "title": "professionalCleaning",
@@ -147,5 +148,7 @@
   "bookingConfirmation": "Booking Confirmation",
   "bookingId": "Booking ID",
   "servicesBooked": "Services Booked",
-  "loginToViewBooking": "Please log in to view your booking details"
+  "loginToViewBooking": "Please log in to view your booking details",
+  "myBookings": "My Bookings",
+  "noBookingsFound": "No bookings found."
 }

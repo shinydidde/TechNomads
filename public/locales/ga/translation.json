@@ -13,7 +13,8 @@
   "fullHomeCleaning": "Glantacháin sa bhaile iomlán",
   "electricians": "Leictreachaithe",
   "refrigeratorRepair": "Cur ar chúl inneall oigheachta",
-  "services": [
+  "services": "Seirbhísí",
+  "servicesList": [
     {
       "id": 1,
       "title": "professionalCleaning",
@@ -147,5 +148,7 @@
   "bookingConfirmation": "Deimhniú Áirithinte",
   "bookingId": "ID Áirithinte",
   "servicesBooked": "Seirbhísí Áirithinte",
-  "loginToViewBooking": "Logáil isteach chun sonraí do áirithinte a fheiceáil"
+  "loginToViewBooking": "Logáil isteach chun sonraí do áirithinte a fheiceáil",
+  "myBookings": "Mo Áirithintí",
+  "noBookingsFound": "Ní bhfuarthas aon áirithintí."
 }

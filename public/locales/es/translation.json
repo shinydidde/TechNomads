@@ -13,7 +13,8 @@
   "fullHomeCleaning": "Limpieza Completa del Hogar",
   "electricians": "Electricistas",
   "refrigeratorRepair": "Reparación de Refrigeradores",
-  "services": [
+  "services": "Servicios",
+  "servicesList": [
     {
       "id": 1,
       "title": "professionalCleaning",
@@ -147,5 +148,7 @@
   "bookingConfirmation": "Confirmación de Reserva",
   "bookingId": "ID de Reserva",
   "servicesBooked": "Servicios Reservados",
-  "loginToViewBooking": "Por favor, inicie sesión para ver los detalles de su reserva"
+  "loginToViewBooking": "Por favor, inicie sesión para ver los detalles de su reserva",
+  "myBookings": "Mis Reservas",
+  "noBookingsFound": "No se encontraron reservas."
 }

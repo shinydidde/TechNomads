@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 const HomePage = () => {
     const { t } = useTranslation();
-    const services = t('services', { returnObjects: true });
+    const services = t('servicesList', { returnObjects: true });
     const classes = useStyles();
     const { currentUser } = useAuth();
     const imageUrls = [

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, Paper } from '@mui/material';
+import { Container, Typography, Paper, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     bookingItem: {
         marginBottom: theme.spacing(2),
     },
+    serviceItem: {
+        marginLeft: theme.spacing(2),
+    },
 }));
 
 const BookingsList = () => {
@@ -27,8 +30,8 @@ const BookingsList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const fetchBookings = async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/bookings/${currentUser.uid}`);
-            setBookings(response.data.bookings);
+            const response = await axios.get(`https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/mybookings/${currentUser.uid}`);
+            setBookings(response.data.body.bookings);
         } catch (error) {
             console.error('Error fetching bookings:', error);
         }
@@ -43,28 +46,40 @@ const BookingsList = () => {
     return (
         <Container className={classes.root}>
             <Typography variant="h4" gutterBottom>
-                {t('My Bookings')}
+                {t('myBookings')}
             </Typography>
             {bookings.length === 0 ? (
                 <Paper className={classes.paper}>
-                    <Typography variant="body1">{t('No bookings found.')}</Typography>
+                    <Typography variant="body1">{t('noBookingsFound')}</Typography>
                 </Paper>
             ) : (
                 bookings.map((booking) => (
-                    <Paper key={booking.id} className={classes.paper}>
+                    <Paper key={booking.bookingId} className={classes.paper}>
                         <Typography variant="h6" gutterBottom className={classes.bookingItem}>
-                            {booking.bookingId}
+                            {t('bookingId')}: {booking.bookingId}
                         </Typography>
                         <Typography variant="body1" className={classes.bookingItem}>
-                            {t('Service')}: {booking.serviceName}
+                            {t('startDate')}: {booking.startDate}
                         </Typography>
                         <Typography variant="body1" className={classes.bookingItem}>
-                            {t('Start Date')}: {booking.startDate}
+                            {t('endDate')}: {booking.endDate}
                         </Typography>
                         <Typography variant="body1" className={classes.bookingItem}>
-                            {t('End Date')}: {booking.endDate}
+                            {t('mobile')}: {booking.phoneNumber}
                         </Typography>
-                        {/* Add more details as needed */}
+                        <Typography variant="h6" className={classes.bookingItem}>
+                            {t('services')}
+                        </Typography>
+                        {booking.services.map((service, index) => (
+                            <Box key={index} className={classes.serviceItem}>
+                                <Typography variant="body1">
+                                    {t(service.title)} - €{service.price} x {service.count}
+                                </Typography>
+                            </Box>
+                        ))}
+                        <Typography variant="h6" className={classes.bookingItem}>
+                            {t('totalAmount')}: €{booking.totalAmount}
+                        </Typography>
                     </Paper>
                 ))
             )}

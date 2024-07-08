@@ -13,7 +13,8 @@
   "fullHomeCleaning": "نظافت کامل منزل",
   "electricians": "برق‌کارها",
   "refrigeratorRepair": "تعمیر یخچال",
-  "services": [
+  "services": "خدمات",
+  "servicesList": [
     {
       "id": 1,
       "title": "professionalCleaning",
@@ -147,5 +148,7 @@
   "bookingConfirmation": "تأیید رزرو",
   "bookingId": "شناسه رزرو",
   "servicesBooked": "خدمات رزرو شده",
-  "loginToViewBooking": "لطفا برای مشاهده جزئیات رزرو خود وارد شوید"
+  "loginToViewBooking": "لطفا برای مشاهده جزئیات رزرو خود وارد شوید",
+  "myBookings": "رزروهای من",
+  "noBookingsFound": "رزروی یافت نشد."
 }

@@ -7,7 +7,7 @@ import { CartContext } from '../context/CartContext';
 const Services = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const services = t('services', { returnObjects: true });
+  const services = t('servicesList', { returnObjects: true });
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
   const handleServiceClick = (service) => {

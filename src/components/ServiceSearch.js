@@ -7,7 +7,7 @@ import './styles.css';
 const ServiceSearch = () => {
   const { t } = useTranslation();
   const navigate = useNavigate(); // Use useNavigate instead of useHistory
-  const services = t('services', { returnObjects: true });
+  const services = t('servicesList', { returnObjects: true });
 
   const [results, setResults] = useState([]);
 
