@@ -5,73 +5,73 @@
   "services": [
     {
       "id": 1,
-      "title": "Glanadh gairmiúil",
-      "description": "Cur síos ar Glanadh gairmiúil",
+      "title": "Glantóirí gairmiúla",
+      "description": "Cinntíonn ár seirbhís glantacháin gairmiúil go bhfuil do theach nó do oifig bláthach agus slachtmhar. Úsáid ár bhfoireann oiliúna táirgí glantacháin agus trealamh ardchaighdeáin chun glanadh cuí a chur ar fáil, ag brath ar do riachtanais shonraithe.",
       "image": "https://cdn-dajjm.nitrocdn.com/pVZOCeHOuERXSqjVfCKASkdWfidALwiK/assets/images/optimized/rev-e4c7922/dublin-housecleaning.ie/wp-content/uploads/2022/10/maid-cleaning-OPT.jpg",
-      "price": 100
+      "price": 10
     },
     {
       "id": 2,
-      "title": "Salon",
-      "description": "Cur síos ar Salon",
+      "title": "Salón",
+      "description": "Cinntíonn ár seirbhís salón go bhfuil do ghruaig a fhágáil iontach bláthach agus go bhfuil do chraiceann agus do fheisteas féin solúbtha agus glan. Táimid ar an eolas maidir leis an bpróiseas cré-umha is déanaí agus na trealamh is fearr a úsáid chun cinntiú go mbeidh tú sásta le do chuid seirbhísí.",
       "image": "https://images.fresha.com/lead-images/placeholders/hair-salon-150.jpg?class=width-small",
-      "price": 200
+      "price": 20
     },
     {
       "id": 3,
-      "title": "Deisiú meaisín níocháin",
-      "description": "Cur síos ar Deisiú meaisín níocháin",
+      "title": "Cur ar chúl inneall níocháin",
+      "description": "Is é ár seirbhís cur ar chúl inneall níocháin cinnte go mbeidh do níocháin glan agus réidh chun clé. Úsáidimid aon-chuid uirlisí agus ábhair ardchaighdeáin chun cinntiú go mbainfidh tú tairbhe as ár seirbhísí ar ardchaighdeán.",
       "image": "https://a.mktgcdn.com/p/NsPkglPVhJGfhChEABxJ7_bwd6HNGgZ80K5AO_wPpJQ/1800x1200.jpg",
-      "price": 300
+      "price": 30
     },
     {
       "id": 4,
-      "title": "Deisiú teirmeach",
-      "description": "Cur síos ar Deisiú teirmeach",
+      "title": "Cur ar chúl inneall geysir",
+      "description": "Is é ár seirbhís cur ar chúl inneall geysir chun cinntiú go mbeidh do sheasamh geysir ag oibriú go maith agus gan aon ghalar. Úsáidimid uirlisí ardchaighdeáin chun cúraim a ghlacadh d'fhonn do ghloine uisce a bheith glan agus réidh chun úsáid.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu6gtXHXSJpEZUqLr_gLFCf5kVfk6EqGLFXQ&s",
-      "price": 400
+      "price": 40
     },
     {
       "id": 5,
-      "title": "Siúnéirí",
-      "description": "Cur síos ar Siúnéirí",
+      "title": "Cearpantóirí",
+      "description": "Cinntíonn ár seirbhís cearpantóireachta go bhfuil do chuid táirgí adhmaid nua agus arna dhéanamh go cúramach agus go cúramach. Táimid ar an eolas faoin ábhar is nua is déanaí agus na trealamh is fearr a úsáid chun cinntiú go mbeidh tú sásta le do chuid seirbhísí.",
       "image": "https://abclive1.s3.amazonaws.com/b5c790ef-f5ea-4649-9ba0-58c3540439c2/productimage/P-0601372860___1___L.jpg",
-      "price": 500
+      "price": 50
     },
     {
       "id": 6,
-      "title": "Pluiméirí",
-      "description": "Cur síos ar Pluiméirí",
+      "title": "Pluaiteoirí",
+      "description": "Cinntíonn ár seirbhís pluaiteoireachta go bhfuil do línte pluaistéireachta ag obair go maith agus ag sábháil fuinneamh. Úsáidimid uirlisí den scoth chun an obair is gá a dhéanamh agus cinntiú go mbeidh tú sásta le do chuid seirbhísí.",
       "image": "https://images.airtasker.com/v7/https://airtasker-seo-assets-prod.s3.amazonaws.com/en_AU/1689671279525-plumber-near-me.jpg",
-      "price": 600
+      "price": 60
     },
     {
       "id": 7,
-      "title": "Deisiú RO",
-      "description": "Cur síos ar Deisiú RO",
+      "title": "Cur ar chúl RO",
+      "description": "Is é ár seirbhís cur ar chúl RO chun cinntiú go mbeidh do chóras uisce RO ag oibriú go maith agus ag sábháil uisce. Úsáidimid uirlisí agus ábhair ardchaighdeáin chun cinntiú go mbainfidh tú tairbhe as ár seirbhísí ar ardchaighdeán.",
       "image": "https://repairguru.in/wp-content/uploads/2022/06/ro-water-purifier-maintenance-services.png",
-      "price": 700
+      "price": 70
     },
     {
       "id": 8,
-      "title": "Glanadh iomlán tí",
-      "description": "Cur síos ar Glanadh iomlán tí",
+      "title": "Glantacháin sa bhaile iomlán",
+      "description": "Cinntíonn ár seirbhís glantacháin sa bhaile iomlán go bhfuil do theach glan ó bhonn go barr. Úsáidimid trealamh den scoth chun gach ball den teach a ghlanadh agus a chur in ord, agus cinntiú go mbeidh tú sásta leis na torthaí.",
       "image": "https://amanetcleaners.ie/wp-content/uploads/2019/03/home-deep-cleaning-sofa-cleaning-bathroom-cleaning-500x500.jpg",
-      "price": 800
+      "price": 80
     },
     {
       "id": 9,
-      "title": "Leictreoirí",
-      "description": "Cur síos ar Leictreoirí",
+      "title": "Leictreachaithe",
+      "description": "Cinntíonn ár seirbhís leictreachaithe go bhfuil do shrutha leictreacha ag obair go maith agus go sábháilte. Úsáidimid uirlisí den scoth chun an obair is gá a dhéanamh agus cinntiú go mbeidh tú sásta le do chuid seirbhísí.",
       "image": "https://www.neit.edu/wp-content/uploads/2021/08/Electrician-at-work-e1643101212741.jpg",
-      "price": 900
+      "price": 90
     },
     {
       "id": 10,
-      "title": "Deisiú cuisneáin",
-      "description": "Cur síos ar Deisiú cuisneáin",
+      "title": "Cur ar chúl inneall oigheachta",
+      "description": "Is é ár seirbhís cur ar chúl inneall oigheachta chun cinntiú go mbeidh do dheiseanna oigheachta ag oibriú go maith agus ag sábháil fuinneamh. Úsáidimid uirlisí agus ábhair ardchaighdeáin chun cinntiú go mbeidh tú sásta le do chuid seirbhísí.",
       "image": "https://allstateappliancerepair.com/wp-content/uploads/2022/07/Refrigerator-Repair-1200x675-1.jpeg",
-      "price": 500
+      "price": 50
     }
   ],
   "location": "Suíomh",

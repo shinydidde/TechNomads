@@ -112,34 +112,36 @@ const Checkout = () => {
 
     const handleCheckout = async () => {
         if (!currentUser) {
-            alert(t('loginToBook'));
-            return;
+          alert(t('loginToBook'));
+          return;
         }
         if (!matchIsValidTel(phoneNumber)) {
-            setPhoneNumberError(t('Invalid phone number'));
-            return;
+          setPhoneNumberError(t('Invalid phone number'));
+          return;
         }
 
         try {
-            await axios.post('http://localhost:5000/api/booking', {
-                userId: currentUser.uid,
-                services: cart.map((service) => ({
-                    id: service.id,
-                    title: service.title,
-                    price: service.price,
-                    count: itemCounts[service.id],
-                })),
-                startDate: startDate.toISOString(),
-                endDate: endDate ? endDate.toISOString() : null,
-                phoneNumber: phoneNumber,
-            });
+          const response = await axios.post('https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/booking', {
+            userId: currentUser.uid,
+            services: cart.map((service) => ({
+              id: service.id,
+              title: service.title,
+              price: service.price,
+              count: itemCounts[service.id],
+            })),
+            startDate: startDate.toISOString(),
+            endDate: endDate ? endDate.toISOString() : null,
+            phoneNumber: phoneNumber,
+          });
 
-            clearCart();
-            navigate('/confirmation');
+          const { bookingId } = response.data; // Assuming response has bookingId
+
+          clearCart();
+          navigate(`/confirmation?bookingId=${bookingId}`);
         } catch (error) {
-            console.error('Error during booking:', error);
+          console.error('Error during booking:', error);
         }
-    };
+      };
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -175,7 +177,7 @@ const Checkout = () => {
                         <Paper className={classes.paper} key={service.id}>
                             <Box className={classes.item}>
                                 <img className={classes.img} src={service.image} alt='' />
-                                <Typography variant="h6">{service.title} - ₹{service.price}</Typography>
+                                <Typography variant="h6">{service.title} - €{service.price}</Typography>
                                 <Box className={classes.itemCount}>
                                     <IconButton
                                         color='secondary'
@@ -236,26 +238,26 @@ const Checkout = () => {
                         <Typography variant="h6">{t('paymentSummary')}</Typography>
                         <Box className={classes.item}>
                             <Typography variant="body1">{t('itemTotal')}</Typography>
-                            <Typography variant="body1">₹{calculateTotal()}</Typography>
+                            <Typography variant="body1">€{calculateTotal()}</Typography>
                         </Box>
                         <Box className={classes.item}>
                             <Typography variant="body1">{t('taxesAndFee')}</Typography>
-                            <Typography variant="body1">₹49</Typography>
+                            <Typography variant="body1">€49</Typography>
                         </Box>
                         <Divider className={classes.section} />
                         <Box className={classes.item}>
                             <Typography variant="body1">{t('total')}</Typography>
-                            <Typography variant="body1">₹{totalAmount}</Typography>
+                            <Typography variant="body1">€{totalAmount}</Typography>
                         </Box>
                         <Box className={classes.item}>
                             <Typography variant="body1" fontWeight="bold">
                                 {t('amountToPay')}
                             </Typography>
                             <Typography variant="body1" fontWeight="bold">
-                                ₹{totalAmount}
+                                €{totalAmount}
                             </Typography>
                         </Box><br />
-                        <Button variant="contained" color="secondary" onClick={handleClickOpen}>
+                        <Button variant="contained" color="secondary" onClick={handleClickOpen} disabled={!matchIsValidTel(phoneNumber)}>
                             {t('checkout')}
                         </Button>
                     </Paper>
@@ -275,12 +277,12 @@ const Checkout = () => {
                     <Typography variant="h6" className={classes.section}>{t('Cart Details')}</Typography>
                     {cart.map((service) => (
                         <Box key={service.id}>
-                            <Typography>{service.title} - ₹{service.price}</Typography>
+                            <Typography>{service.title} - €{service.price}</Typography>
                         </Box>
                     ))}
-                    <Typography>Taxes and Fee - ₹49</Typography>
+                    <Typography>Taxes and Fee - €49</Typography>
                     <Divider className={classes.section} />
-                    <Typography>{t('Total Amount')}: ₹{totalAmount}</Typography>
+                    <Typography>{t('Total Amount')}: €{totalAmount}</Typography>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">

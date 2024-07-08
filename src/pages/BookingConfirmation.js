@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Typography, Paper } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,20 +21,27 @@ const useStyles = makeStyles((theme) => ({
 const BookingConfirmation = () => {
     const classes = useStyles();
     const { t } = useTranslation();
+    const location = useLocation();
+    const bookingId = new URLSearchParams(location.search).get('bookingId'); // Extract bookingId from query param
 
-    // Simulated booking details (replace with actual data from API or state)
-    const bookingDetails = {
-        bookingId: '123456789',
-        startDate: '2024-07-10',
-        endDate: '2024-07-11',
-        services: [
-            { id: 1, title: 'Service 1', price: 100 },
-            { id: 2, title: 'Service 2', price: 150 },
-        ],
-        totalAmount: 250,
-        phoneNumber: '+1234567890',
-        // Add more details as needed
-    };
+    const [bookingDetails, setBookingDetails] = useState(null);
+
+    useEffect(() => {
+        if (bookingId) {
+            // Make API call to fetch booking details
+            axios.get(`https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/mybookings/${bookingId}`)
+                .then(response => {
+                    setBookingDetails(response.data);
+                })
+                .catch(error => {
+                    console.error('Error fetching booking details:', error);
+                });
+        }
+    }, [bookingId]);
+
+    if (!bookingDetails) {
+        return null; // Optionally, show loading indicator or error message if data is being fetched
+    }
 
     return (
         <Container className={classes.root}>
@@ -57,11 +66,11 @@ const BookingConfirmation = () => {
                 </Typography>
                 {bookingDetails.services.map((service) => (
                     <Typography key={service.id} variant="body1" className={classes.bookingDetails}>
-                        {service.title} - ₹{service.price}
+                        {service.title} - €{service.price}
                     </Typography>
                 ))}
                 <Typography variant="h6" className={classes.bookingDetails}>
-                    {t('Total Amount')}: ₹{bookingDetails.totalAmount}
+                    {t('Total Amount')}: €{bookingDetails.totalAmount}
                 </Typography>
             </Paper>
         </Container>
