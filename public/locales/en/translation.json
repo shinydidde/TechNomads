@@ -2,73 +2,84 @@
   "appTitle": "Genie",
   "welcomeMessage": "Welcome to Genie!",
   "description": "This is a description of the app.",
+  "searchForServices": "Search for Services",
+  "professionalCleaning": "Professional Cleaning",
+  "salon": "Salon",
+  "washingMachineRepair": "Washing Machine Repair",
+  "geyserRepair": "Geyser Repair",
+  "carpenters": "Carpenters",
+  "plumbers": "Plumbers",
+  "rORepair": "RO Repair",
+  "fullHomeCleaning": "Full Home Cleaning",
+  "electricians": "Electricians",
+  "refrigeratorRepair": "Refrigerator Repair",
   "services": [
     {
       "id": 1,
-      "title": "Professional Cleaning",
+      "title": "professionalCleaning",
       "description": "Our professional cleaning service ensures your home or office is spotless and hygienic. Our trained staff use top-quality cleaning products and equipment to provide a thorough clean, tailored to your specific needs.",
       "image": "https://cdn-dajjm.nitrocdn.com/pVZOCeHOuERXSqjVfCKASkdWfidALwiK/assets/images/optimized/rev-e4c7922/dublin-housecleaning.ie/wp-content/uploads/2022/10/maid-cleaning-OPT.jpg",
       "price": 10
     },
     {
       "id": 2,
-      "title": "Salon",
+      "title": "salon",
       "description": "Our salon services offer a range of beauty and grooming treatments including haircuts, styling, coloring, facials, and more. Our experienced stylists use high-quality products to ensure you look and feel your best.",
       "image": "https://images.fresha.com/lead-images/placeholders/hair-salon-150.jpg?class=width-small",
       "price": 20
     },
     {
       "id": 3,
-      "title": "Washing Machine Repair",
+      "title": "washingMachineRepair",
       "description": "Get your washing machine running smoothly again with our repair service. Our skilled technicians can diagnose and fix a variety of issues quickly and efficiently, so you can get back to your routine.",
       "image": "https://a.mktgcdn.com/p/NsPkglPVhJGfhChEABxJ7_bwd6HNGgZ80K5AO_wPpJQ/1800x1200.jpg",
       "price": 30
     },
     {
       "id": 4,
-      "title": "Geyser Repair",
+      "title": "geyserRepair",
       "description": "Our geyser repair service ensures you have a reliable hot water supply. We handle all types of geyser issues, from heating problems to leaks, providing a quick and effective solution.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu6gtXHXSJpEZUqLr_gLFCf5kVfk6EqGLFXQ&s",
       "price": 40
     },
     {
       "id": 5,
-      "title": "Carpenters",
+      "title": "carpenters",
       "description": "Our professional carpenters can handle all your woodworking needs, from furniture repair to custom-made pieces. We provide quality craftsmanship and reliable service for all types of carpentry projects.",
       "image": "https://abclive1.s3.amazonaws.com/b5c790ef-f5ea-4649-9ba0-58c3540439c2/productimage/P-0601372860___1___L.jpg",
       "price": 50
     },
     {
       "id": 6,
-      "title": "Plumbers",
+      "title": "plumbers",
       "description": "Our experienced plumbers are available to handle all your plumbing needs, from fixing leaks to installing new fixtures. We offer prompt and efficient service to ensure your plumbing system is in top condition.",
       "image": "https://images.airtasker.com/v7/https://airtasker-seo-assets-prod.s3.amazonaws.com/en_AU/1689671279525-plumber-near-me.jpg",
       "price": 60
     },
     {
       "id": 7,
-      "title": "RO Repair",
+      "title": "rORepair",
       "description": "Ensure your water purifier is working perfectly with our RO repair service. Our technicians are skilled in repairing and maintaining all types of RO systems to provide you with clean and safe drinking water.",
       "image": "https://repairguru.in/wp-content/uploads/2022/06/ro-water-purifier-maintenance-services.png",
       "price": 70
     },
     {
       "id": 8,
-      "title": "Full Home Cleaning",
+      "title": "fullHomeCleaning",
       "description": "Our full home cleaning service provides a comprehensive clean for your entire home. We cover all areas, including kitchens, bathrooms, living spaces, and bedrooms, leaving your home sparkling clean and fresh.",
       "image": "https://amanetcleaners.ie/wp-content/uploads/2019/03/home-deep-cleaning-sofa-cleaning-bathroom-cleaning-500x500.jpg",
       "price": 80
     },
     {
       "id": 9,
-      "title": "Electricians",
+      "title": "electricians",
       "description": "Our professional electricians offer a wide range of electrical services, from repairs and installations to safety inspections. We ensure all work is done safely and up to code, providing you with peace of mind.",
       "image": "https://www.neit.edu/wp-content/uploads/2021/08/Electrician-at-work-e1643101212741.jpg",
       "price": 90
     },
     {
       "id": 10,
-      "title": "Refrigerator Repair",
+      "title": "refrigeratorRepair",
       "description": "Our refrigerator repair service ensures your fridge is running efficiently. We handle all types of issues, including cooling problems, leaks, and more, with quick and reliable service to keep your food fresh.",
       "image": "https://allstateappliancerepair.com/wp-content/uploads/2022/07/Refrigerator-Repair-1200x675-1.jpeg",
       "price": 50
@@ -112,5 +123,25 @@
   "taxesAndFee": "Taxes and Fee",
   "total": "Total",
   "amountToPay": "Amount to Pay",
-  "remove": "Remove"
+  "remove": "Remove",
+  "ourServices": "Our Services",
+  "viewDetails": "View Details",
+  "addToCart": "Add to Cart",
+  "removeFromCart": "Remove from Cart",
+  "price": "Price",
+  "cartItems": "Cart Items",
+  "startDate": "Start Date",
+  "endDate": "End Date",
+  "mobile": "Mobile",
+  "login": "Login",
+  "logout": "Logout",
+  "confirmBooking": "Confirm Your Booking",
+  "reviewBookingDetails": "Please review your booking and cart details before confirming.",
+  "bookingDetails": "Booking Details",
+  "cartDetails": "Cart Details",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "totalAmount": "Total Amount",
+  "fillMobileField": "Fill Mobile Field",
+  "invalidPhoneNumber": "Invalid Phone Number"
 }

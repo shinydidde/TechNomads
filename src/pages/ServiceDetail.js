@@ -65,13 +65,13 @@ const ServiceDetail = () => {
           </Box>
         </Grid>
         <Grid item xs={6}>
-            <Typography variant="h4">{service.title}</Typography>
+            <Typography variant="h4">{t(service.title)}</Typography>
 
             <Typography variant="body1" mt={2}>
               {service.description}
             </Typography>
             <Typography variant="body1" mt={2}>
-              {t('price')}: €{service.price}
+              {t('price')} : €{service.price}
             </Typography>
             <Grid container justifyContent="flex-start" spacing={2} mt={4}>
               {isInCart ? (

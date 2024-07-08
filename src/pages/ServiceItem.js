@@ -19,7 +19,7 @@ const ServiceItem = ({ id, imageUrl, altText }) => {
                         <Typography variant="body2" color="textSecondary" component="p">
                             Service {id}
                         </Typography>
-                        <Button onClick={() => addToCart(id)}>Add to Cart</Button>
+                        <Button onClick={() => addToCart(id)}>{t('addToCart')}</Button>
                     </CardContent>
                 </CardActionArea>
             </Card>

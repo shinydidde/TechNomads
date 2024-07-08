@@ -29,7 +29,7 @@ const BookingConfirmation = () => {
     useEffect(() => {
         if (bookingId) {
             // Make API call to fetch booking details
-            axios.get(`https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/mybookings/${bookingId}`)
+            axios.get(`https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/confirmation/${bookingId}`)
                 .then(response => {
                     setBookingDetails(response.data);
                 })
@@ -42,6 +42,8 @@ const BookingConfirmation = () => {
     if (!bookingDetails) {
         return null; // Optionally, show loading indicator or error message if data is being fetched
     }
+
+    console.log(bookingDetails);
 
     return (
         <Container className={classes.root}>

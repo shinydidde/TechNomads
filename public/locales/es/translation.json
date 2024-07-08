@@ -2,73 +2,84 @@
   "appTitle": "Mi Aplicación",
   "welcomeMessage": "¡Bienvenido a Mi Aplicación!",
   "description": "Esta es una descripción de la aplicación.",
+  "searchForServices": "Buscar Servicios",
+  "professionalCleaning": "Limpieza Profesional",
+  "salon": "Salón de Belleza",
+  "washingMachineRepair": "Reparación de Lavadoras",
+  "geyserRepair": "Reparación de Calentadores",
+  "carpenters": "Carpinteros",
+  "plumbers": "Fontaneros",
+  "rORepair": "Reparación de Purificadores de Agua",
+  "fullHomeCleaning": "Limpieza Completa del Hogar",
+  "electricians": "Electricistas",
+  "refrigeratorRepair": "Reparación de Refrigeradores",
   "services": [
     {
       "id": 1,
-      "title": "Limpieza Profesional",
+      "title": "professionalCleaning",
       "description": "Nuestro servicio de limpieza profesional asegura que su hogar u oficina esté impecable e higiénico. Nuestro personal capacitado utiliza productos y equipos de limpieza de alta calidad para proporcionar una limpieza a fondo, adaptada a sus necesidades específicas.",
       "image": "https://cdn-dajjm.nitrocdn.com/pVZOCeHOuERXSqjVfCKASkdWfidALwiK/assets/images/optimized/rev-e4c7922/dublin-housecleaning.ie/wp-content/uploads/2022/10/maid-cleaning-OPT.jpg",
       "price": 10
     },
     {
       "id": 2,
-      "title": "Salón de Belleza",
+      "title": "salon",
       "description": "Nuestro servicio de salón de belleza ofrece una amplia gama de tratamientos para el cuidado personal. Nuestros estilistas y cosmetólogos profesionales están aquí para ayudarte a lucir y sentirte lo mejor posible.",
       "image": "https://images.fresha.com/lead-images/placeholders/hair-salon-150.jpg?class=width-small",
       "price": 20
     },
     {
       "id": 3,
-      "title": "Reparación de Lavadoras",
+      "title": "washingMachineRepair",
       "description": "Ofrecemos servicios de reparación de lavadoras para solucionar cualquier problema que pueda tener su electrodoméstico. Nuestros técnicos expertos aseguran que su lavadora vuelva a funcionar en perfecto estado.",
       "image": "https://a.mktgcdn.com/p/NsPkglPVhJGfhChEABxJ7_bwd6HNGgZ80K5AO_wPpJQ/1800x1200.jpg",
       "price": 30
     },
     {
       "id": 4,
-      "title": "Reparación de Calentadores",
+      "title": "geyserRepair",
       "description": "Nuestros especialistas en reparación de calentadores garantizan que su calentador funcione de manera eficiente y segura. Ofrecemos diagnósticos precisos y soluciones rápidas.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu6gtXHXSJpEZUqLr_gLFCf5kVfk6EqGLFXQ&s",
       "price": 40
     },
     {
       "id": 5,
-      "title": "Carpinteros",
+      "title": "carpenters",
       "description": "Nuestros servicios de carpintería cubren todo, desde reparaciones menores hasta proyectos personalizados. Nuestros carpinteros profesionales están comprometidos con la calidad y la precisión en cada trabajo.",
       "image": "https://abclive1.s3.amazonaws.com/b5c790ef-f5ea-4649-9ba0-58c3540439c2/productimage/P-0601372860___1___L.jpg",
       "price": 50
     },
     {
       "id": 6,
-      "title": "Fontaneros",
+      "title": "plumbers",
       "description": "Nuestros fontaneros están disponibles para todas sus necesidades de plomería, ya sea una fuga de agua, instalación de tuberías o mantenimiento general. Garantizamos un servicio rápido y eficiente.",
       "image": "https://images.airtasker.com/v7/https://airtasker-seo-assets-prod.s3.amazonaws.com/en_AU/1689671279525-plumber-near-me.jpg",
       "price": 60
     },
     {
       "id": 7,
-      "title": "Reparación de Purificadores de Agua",
+      "title": "rORepair",
       "description": "Nuestro servicio de reparación de purificadores de agua asegura que su sistema de purificación funcione correctamente, proporcionando agua limpia y segura para su hogar.",
       "image": "https://repairguru.in/wp-content/uploads/2022/06/ro-water-purifier-maintenance-services.png",
       "price": 70
     },
     {
       "id": 8,
-      "title": "Limpieza Completa del Hogar",
+      "title": "fullHomeCleaning",
       "description": "Nuestro servicio de limpieza completa del hogar cubre todas las áreas de su hogar para asegurarse de que cada rincón esté limpio y ordenado. Utilizamos productos y técnicas de limpieza de alta calidad.",
       "image": "https://amanetcleaners.ie/wp-content/uploads/2019/03/home-deep-cleaning-sofa-cleaning-bathroom-cleaning-500x500.jpg",
       "price": 80
     },
     {
       "id": 9,
-      "title": "Electricistas",
+      "title": "electricians",
       "description": "Nuestros electricistas están capacitados para manejar todo tipo de trabajos eléctricos, desde reparaciones menores hasta instalaciones complejas. Garantizamos seguridad y profesionalismo en cada proyecto.",
       "image": "https://www.neit.edu/wp-content/uploads/2021/08/Electrician-at-work-e1643101212741.jpg",
       "price": 90
     },
     {
       "id": 10,
-      "title": "Reparación de Refrigeradores",
+      "title": "refrigeratorRepair",
       "description": "Ofrecemos servicios de reparación de refrigeradores para solucionar cualquier problema y garantizar que su electrodoméstico funcione de manera óptima.",
       "image": "https://allstateappliancerepair.com/wp-content/uploads/2022/07/Refrigerator-Repair-1200x675-1.jpeg",
       "price": 50
@@ -112,5 +123,25 @@
   "taxesAndFee": "Impuestos y tarifas",
   "total": "Total",
   "amountToPay": "Cantidad a pagar",
-  "remove": "Eliminar"
+  "remove": "Eliminar",
+  "ourServices": "Nuestros Servicios",
+  "viewDetails": "Ver Detalles",
+  "addToCart": "Añadir al Carrito",
+  "removeFromCart": "Eliminar del Carrito",
+  "price": "Precio",
+  "cartItems": "Artículos en el Carrito",
+  "startDate": "Fecha de Inicio",
+  "endDate": "Fecha de Fin",
+  "mobile": "Móvil",
+  "login": "Iniciar Sesión",
+  "logout": "Cerrar Sesión",
+  "confirmBooking": "Confirmar tu Reserva",
+  "reviewBookingDetails": "Por favor, revisa los detalles de tu reserva y del carrito antes de confirmar.",
+  "bookingDetails": "Detalles de la Reserva",
+  "cartDetails": "Detalles del Carrito",
+  "cancel": "Cancelar",
+  "confirm": "Confirmar",
+  "totalAmount": "Monto Total",
+  "fillMobileField": "Complete el campo de teléfono móvil",
+  "invalidPhoneNumber": "Número de teléfono no válido"
 }

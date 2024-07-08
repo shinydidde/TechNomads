@@ -30,7 +30,7 @@ const ServiceSearch = () => {
   };
 
   const handleSelectService = (title) => {
-    const selectedService = services.find(service => service.title === title);
+    const selectedService = services.find(service => t(service.title) === title);
     if (selectedService) {
       navigate(`/service/${selectedService.id}`); // Use navigate to navigate to the selected service
     }
@@ -40,12 +40,12 @@ const ServiceSearch = () => {
     <Container>
       <Autocomplete
         freeSolo
-        options={results.map((service) => service.title)}
+        options={results.map((service) => t(service.title))}
         getOptionLabel={(option) => option}
         renderInput={(params) => (
           <TextField
             {...params}
-            label="Search for Services"
+            label={t('searchForServices')}
             variant="outlined"
             onChange={handleSearch}
             className='SearchBar'

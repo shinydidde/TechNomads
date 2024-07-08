@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Container, Typography, Box, Button, Divider, Paper, TextField, IconButton, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useNavigate } from 'react-router-dom';
@@ -11,6 +11,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import GoogleLoginButton from './GoogleLoginButton';
+import CloseIcon from '@mui/icons-material/Close';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { MuiTelInput, matchIsValidTel } from 'mui-tel-input';
 
@@ -55,29 +56,45 @@ const useStyles = makeStyles((theme) => ({
 
 const Checkout = () => {
     const classes = useStyles();
-    const { t } = useTranslation();
+    const { t } = useTranslation(); // Initialize the useTranslation hook
+
     const { currentUser } = useAuth();
     const { cart, removeFromCart, calculateTotal, clearCart } = useContext(CartContext);
     const navigate = useNavigate();
+
     const [itemCounts, setItemCounts] = useState(
         cart.reduce((acc, item) => {
             acc[item.id] = 1;
             return acc;
         }, {})
     );
+
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(() => {
         const defaultEndDate = new Date(startDate);
         defaultEndDate.setDate(startDate.getDate() + 1);
         return defaultEndDate;
     });
+
     const [phoneNumber, setPhoneNumber] = useState('');
     const [phoneNumberError, setPhoneNumberError] = useState('');
     const [open, setOpen] = useState(false); // State to control dialog
-    const [expanded, setExpanded] = React.useState(false);
+    const [expanded, setExpanded] = useState('panel1'); // Panel 2 (Booking Details) open by default
+    const [mobileFieldFilled, setMobileFieldFilled] = useState(false); // State to track if mobile field is filled
+
+    useEffect(() => {
+        // Check if mobile field is filled
+        setMobileFieldFilled(matchIsValidTel(phoneNumber));
+    }, [phoneNumber]);
 
     const handleChange = (panel) => (event, isExpanded) => {
-        setExpanded(isExpanded ? panel : false);
+        // Check if mobile field is filled before allowing panel change
+        if (!mobileFieldFilled) {
+            setPhoneNumberError(t('fillMobileField'));
+        } else {
+            setExpanded(isExpanded ? panel : false);
+            setPhoneNumberError('');
+        }
     };
 
     const handleRemove = (id) => {
@@ -88,12 +105,13 @@ const Checkout = () => {
             return updatedCounts;
         });
     };
-    const totalAmount = calculateTotal() + 49; // Example fixed tax and fee
+
+    const totalAmount = calculateTotal() + 4; // Example fixed tax and fee
 
     const handlePhoneNumberChange = (newPhoneNumber) => {
         setPhoneNumber(newPhoneNumber);
         if (!matchIsValidTel(newPhoneNumber)) {
-            setPhoneNumberError(t('Invalid phone number'));
+            setPhoneNumberError(t('invalidPhoneNumber'));
         } else {
             setPhoneNumberError('');
         }
@@ -125,7 +143,7 @@ const Checkout = () => {
             return;
         }
         if (!matchIsValidTel(phoneNumber)) {
-            setPhoneNumberError(t('Invalid phone number'));
+            setPhoneNumberError(t('invalidPhoneNumber'));
             return;
         }
 
@@ -142,11 +160,9 @@ const Checkout = () => {
                 endDate: endDate ? endDate.toISOString() : null,
                 phoneNumber: phoneNumber,
             });
-
-            const { bookingId } = response.data; // Assuming response has bookingId
-
+            const { body: { uniqueIdentifier } } = response.data;
             clearCart();
-            navigate(`/confirmation?bookingId=${bookingId}`);
+            navigate(`/confirmation?bookingId=${uniqueIdentifier}`);
         } catch (error) {
             console.error('Error during booking:', error);
         }
@@ -182,48 +198,20 @@ const Checkout = () => {
                 </Paper>
             ) : (
                 <div>
-                    <Accordion defaultExpanded expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1bh-content"
-                            id="panel1bh-header"
-                        >
-                            <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                                Cart Items
-                            </Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            {cart.map((service) => (
-                                <Paper className={classes.paper} key={service.id}>
-                                    <Box className={classes.item}>
-                                        <img className={classes.img} src={service.image} alt='' />
-                                        <Typography variant="h6">{service.title} - €{service.price}</Typography>
-                                        <Box className={classes.itemCount}>
-                                            <IconButton
-                                                color='secondary'
-                                                className={classes.itemCountButton}
-                                                onClick={() => handleRemove(service.id)}
-                                            ><DeleteIcon /></IconButton>
-                                        </Box>
-                                    </Box>
-                                </Paper>
-                            ))}
-                        </AccordionDetails>
-                    </Accordion>
-                    <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-                        <AccordionSummary
+                    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                    <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel2bh-content"
                             id="panel2bh-header"
                         >
-                            <Typography sx={{ width: '33%', flexShrink: 0 }}>{t('Booking Details')}</Typography>
+                            <Typography sx={{ width: '33%', flexShrink: 0 }}>{t('bookingDetails')}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Paper className={classes.paper}>
                                 <Box>
                                     <TextField
                                         id="start-date"
-                                        label={t('Start Date')}
+                                        label={t('startDate')}
                                         type="date"
                                         value={startDate.toISOString().slice(0, 10)}
                                         onChange={handleStartDateChange}
@@ -238,7 +226,7 @@ const Checkout = () => {
                                     />
                                     <TextField
                                         id="end-date"
-                                        label={t('End Date')}
+                                        label={t('endDate')}
                                         type="date"
                                         value={endDate ? endDate.toISOString().slice(0, 10) : ''}
                                         onChange={handleEndDateChange}
@@ -252,7 +240,7 @@ const Checkout = () => {
                                     />
                                     <MuiTelInput
                                         id="phone-number"
-                                        label={t('Mobile')}
+                                        label={t('mobile')}
                                         value={phoneNumber}
                                         defaultCountry="IE"
                                         onChange={handlePhoneNumberChange}
@@ -263,6 +251,38 @@ const Checkout = () => {
                                     />
                                 </Box>
                             </Paper>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                    <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1bh-content"
+                            id="panel1bh-header"
+                        >
+                            <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                                {t('cartItems')}
+                            </Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            {mobileFieldFilled ? (
+                                cart.map((service) => (
+                                    <Paper className={classes.paper} key={service.id}>
+                                        <Box className={classes.item}>
+                                            <img className={classes.img} src={service.image} alt='' />
+                                            <Typography variant="h6">{t(service.title)} - €{service.price}</Typography>
+                                            <Box className={classes.itemCount}>
+                                                <IconButton
+                                                    color='secondary'
+                                                    className={classes.itemCountButton}
+                                                    onClick={() => handleRemove(service.id)}
+                                                ><DeleteIcon /></IconButton>
+                                            </Box>
+                                        </Box>
+                                    </Paper>
+                                ))
+                            ) : (
+                                <Typography variant="body1">{t('fillMobileToViewCart')}</Typography>
+                            )}
                         </AccordionDetails>
                     </Accordion>
                     <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
@@ -298,7 +318,7 @@ const Checkout = () => {
                                         €{totalAmount}
                                     </Typography>
                                 </Box><br />
-                                <Button variant="contained" color="secondary" onClick={handleClickOpen} disabled={!matchIsValidTel(phoneNumber)}>
+                                <Button variant="contained" color="secondary" onClick={handleClickOpen} disabled={!mobileFieldFilled}>
                                     {t('checkout')}
                                 </Button>
                             </Paper>
@@ -308,31 +328,43 @@ const Checkout = () => {
             )}
 
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>{t('Confirm Your Booking')}</DialogTitle>
+                <DialogTitle>{t('confirmBooking')}</DialogTitle>
+                <IconButton
+                    aria-label="close"
+                    onClick={handleClose}
+                    sx={{
+                        position: 'absolute',
+                        right: 8,
+                        top: 8,
+                        color: (theme) => theme.palette.grey[500],
+                    }}
+                >
+                    <CloseIcon />
+                </IconButton>
                 <DialogContent>
                     <DialogContentText>
-                        {t('Please review your booking and cart details before confirming.')}
+                        {t('reviewBookingDetails')}
                     </DialogContentText><br />
-                    <Typography variant="h6">{t('Booking Details')}</Typography>
-                    <Typography>{t('Start Date')}: {startDate.toISOString().slice(0, 10)}</Typography>
-                    <Typography>{t('End Date')}: {endDate ? endDate.toISOString().slice(0, 10) : t('N/A')}</Typography>
-                    <Typography>{t('Mobile')}: {phoneNumber}</Typography><br />
-                    <Typography variant="h6" className={classes.section}>{t('Cart Details')}</Typography>
+                    <Typography variant="h6">{t('bookingDetails')}</Typography>
+                    <Typography>{t('startDate')}: {startDate.toISOString().slice(0, 10)}</Typography>
+                    <Typography>{t('endDate')}: {endDate ? endDate.toISOString().slice(0, 10) : t('N/A')}</Typography>
+                    <Typography>{t('mobile')}: {phoneNumber}</Typography><br />
+                    <Typography variant="h6" className={classes.section}>{t('cartDetails')}</Typography>
                     {cart.map((service) => (
                         <Box key={service.id}>
-                            <Typography>{service.title} - €{service.price}</Typography>
+                            <Typography>{t(service.title)} - €{service.price}</Typography>
                         </Box>
                     ))}
-                    <Typography>Taxes and Fee - €49</Typography>
+                    <Typography>{t('taxesAndFee')} - €49</Typography>
                     <Divider className={classes.section} />
-                    <Typography>{t('Total Amount')}: €{totalAmount}</Typography>
+                    <Typography mt={2}><b>{t('totalAmount')}: €{totalAmount}</b></Typography>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color="primary">
-                        {t('Cancel')}
+                    <Button onClick={handleClose} variant='contained' color="primary">
+                        {t('cancel')}
                     </Button>
-                    <Button onClick={handleConfirm} color="secondary">
-                        {t('Confirm')}
+                    <Button onClick={handleConfirm} variant='contained' color="secondary">
+                        {t('confirm')}
                     </Button>
                 </DialogActions>
             </Dialog>

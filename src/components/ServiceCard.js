@@ -3,18 +3,20 @@ import PropTypes from 'prop-types';
 import { Card, CardMedia, CardContent, Typography, Grid, Button, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { CartContext } from '../context/CartContext';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     link: {
-        textDecoration: 'none'
+        textDecoration: 'none',
+        color: 'inherit'
     },
     card: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         height: '100%',
-        minHeight: '500px'
+        minHeight: '480px'
     },
     media: {
         height: 150,
@@ -36,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
 const ServiceCard = ({ service }) => {
     const { cart, addToCart, removeFromCart } = useContext(CartContext);
     const classes = useStyles();
+    const { t } = useTranslation();
 
     const isInCart = cart.some(item => item.id === service.id);
 
@@ -46,21 +49,24 @@ const ServiceCard = ({ service }) => {
     return (
         <Grid key={service.title} container spacing={2} justifyContent="center">
             <Grid item xs={11}>
-                <Link className={classes.link} to={'/service/' + service.id}>
                     <Card className={classes.card}>
+                        <Link className={classes.link} to={'/service/' + service.id}>
                         <CardMedia
                             component="img"
                             alt={service.title}
                             image={service.image}
                             className={classes.media}
                         />
+                        </Link>
                         <CardContent className={classes.cardContent}>
+                        <Link className={classes.link} to={'/service/' + service.id}>
                             <Typography gutterBottom variant="h5" component="div">
-                                {service.title} - €{service.price}
+                                {t(service.title)} - €{service.price}
                             </Typography>
                             <Typography variant="body2" color="textSecondary">
                                 {service.description}
                             </Typography>
+                            </Link>
                             <Box className={classes.buttonContainer}>
                                 <Button
                                     variant={isInCart ? "outlined" : "contained"}
@@ -68,12 +74,12 @@ const ServiceCard = ({ service }) => {
                                     size="small"
                                     onClick={() => isInCart ? removeFromCart(service.id) : addToCart(service)}
                                 >
-                                    {isInCart ? "Remove from Cart" : "Add to Cart"}
+                                    {isInCart ? t('removeFromCart') : t('addToCart')}
                                 </Button>
                             </Box>
                         </CardContent>
                     </Card>
-                </Link>
+
             </Grid>
         </Grid>
     );

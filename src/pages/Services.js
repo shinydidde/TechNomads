@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Typography, Box, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { CartContext } from '../context/CartContext';
 
 const Services = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const services = t('services', { returnObjects: true });
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
   const handleServiceClick = (service) => {
     navigate(`/service/${service.id}`);
+  };
+
+  const isInCart = (service) => {
+    return cart.some(item => item.id === service.id);
   };
 
   return (
     <Container>
       <Box sx={{ mt: 4 }}>
         <Typography variant="h4" gutterBottom>
-          Our Services
+          {t('ourServices')}
         </Typography>
         <Grid container spacing={4}>
           {services.map((service) => (
@@ -30,10 +36,28 @@ const Services = () => {
                   <Typography variant="body2" color="text.secondary">
                     {service.description}
                   </Typography>
-                  <br/>
-                  <Button variant="outlined" color="secondary" onClick={() => handleServiceClick(service)}>
-                    View Details
-                  </Button>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', mt: 2 }}>
+                    <Button variant="outlined" color="secondary" onClick={() => handleServiceClick(service)}>
+                      {t('viewDetails')}
+                    </Button>
+                    {isInCart(service) ? (
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={() => removeFromCart(service.id)}
+                      >
+                        {t('removeFromCart')}
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={() => addToCart(service)}
+                      >
+                        {t('addToCart')}
+                      </Button>
+                    )}
+                  </Box>
                 </CardContent>
               </Card>
             </Grid>

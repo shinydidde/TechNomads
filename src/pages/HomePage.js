@@ -50,7 +50,6 @@ const HomePage = () => {
                                 <Typography className={classes.text} variant="h2">
                                     {t('welcomeMessage')}, {currentUser.displayName}
                                 </Typography>
-                                <Typography className={classes.text}>{t('description')}</Typography>
                                 <br/>
                             </div>
                         ) : (
@@ -59,7 +58,6 @@ const HomePage = () => {
                                 <Typography className={classes.text} variant="h2">
                                     {t('welcomeMessage')}
                                 </Typography>
-                                <Typography className={classes.text}>{t('description')}</Typography>
                                 <br/>
                             </div>
                         )}
