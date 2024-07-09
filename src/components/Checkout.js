@@ -14,6 +14,7 @@ import GoogleLoginButton from './GoogleLoginButton';
 import CloseIcon from '@mui/icons-material/Close';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { MuiTelInput, matchIsValidTel } from 'mui-tel-input';
+import i18n from '../i18n';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -148,16 +149,19 @@ const Checkout = () => {
         }
 
         try {
+            // Translate the cart items to English before sending to the backend
+            const translatedCart = cart.map((service) => ({
+                id: service.id,
+                title: i18n.t(service.title, { lng: 'en' }),
+                price: service.price,
+                count: itemCounts[service.id],
+            }));
+
             const response = await axios.post('https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/booking', {
                 userId: currentUser.uid,
-                services: cart.map((service) => ({
-                    id: service.id,
-                    title: service.title,
-                    price: service.price,
-                    count: itemCounts[service.id],
-                })),
+                services: translatedCart,
                 startDate: startDate.toISOString(),
-                endDate: endDate ? endDate.toISOString() : null,
+                endDate: endDate.toISOString(),
                 phoneNumber: phoneNumber,
             });
             const { body: { uniqueIdentifier } } = response.data;
@@ -303,7 +307,7 @@ const Checkout = () => {
                                 </Box>
                                 <Box className={classes.item}>
                                     <Typography variant="body1">{t('taxesAndFee')}</Typography>
-                                    <Typography variant="body1">€49</Typography>
+                                    <Typography variant="body1">€4</Typography>
                                 </Box>
                                 <Divider className={classes.section} />
                                 <Box className={classes.item}>
@@ -355,7 +359,7 @@ const Checkout = () => {
                             <Typography>{t(service.title)} - €{service.price}</Typography>
                         </Box>
                     ))}
-                    <Typography>{t('taxesAndFee')} - €49</Typography>
+                    <Typography>{t('taxesAndFee')} - €4</Typography>
                     <Divider className={classes.section} />
                     <Typography mt={2}><b>{t('totalAmount')}: €{totalAmount}</b></Typography>
                 </DialogContent>
