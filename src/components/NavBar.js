@@ -12,6 +12,9 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 
 const useStyles = makeStyles((theme) => ({
+  appBar: {
+    zIndex : '9999 !important'
+  },
   links: {
     textDecoration: 'none',
     color: 'inherit',
@@ -112,7 +115,7 @@ const NavBar = ({ onLocationChange, onLanguageChange }) => {
 
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar className={classes.appBar} position="fixed">
         <Toolbar>
           {isSmallScreen && (
             <IconButton
