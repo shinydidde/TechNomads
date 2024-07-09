@@ -150,5 +150,10 @@
   "servicesBooked": "Servicios Reservados",
   "loginToViewBooking": "Por favor, inicie sesión para ver los detalles de su reserva",
   "myBookings": "Mis Reservas",
-  "noBookingsFound": "No se encontraron reservas."
+  "noBookingsFound": "No se encontraron reservas.",
+  "cannotSelectPastDate": "No puede seleccionar fechas pasadas.",
+  "endDateAfterStartDate": "La fecha de finalización debe ser posterior a la fecha de inicio.",
+  "editBooking": "Editar Reserva",
+  "save": "Guardar",
+  "delete": "Eliminar"
 }

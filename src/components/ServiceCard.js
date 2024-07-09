@@ -70,7 +70,7 @@ const ServiceCard = ({ service }) => {
                             <Box className={classes.buttonContainer}>
                                 <Button
                                     variant={isInCart ? "outlined" : "contained"}
-                                    color="secondary"
+                                    color="primary"
                                     size="small"
                                     onClick={() => isInCart ? removeFromCart(service.id) : addToCart(service)}
                                 >

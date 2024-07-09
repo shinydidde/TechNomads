@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Container, Typography, Paper, Box, Chip } from '@mui/material';
+import { Container, Typography, Paper, Box, Chip, Link, IconButton } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
+import { Link as RouterLink } from 'react-router-dom';
 import GoogleLoginButton from '../components/GoogleLoginButton';
+import { Edit } from '@mui/icons-material';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2),
         position: 'relative'
     },
+    link: {
+        color: 'inherit'
+    },
     bookingItem: {
         marginBottom: theme.spacing(2),
     },
@@ -22,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: theme.spacing(0),
     },
     activeChip: {
-        backgroundColor: 'black',
-        color: 'white',
+        backgroundColor: '#68b034 !important',
+        color: 'black',
         position: 'absolute',
         top: theme.spacing(1),
         right: theme.spacing(1),
@@ -89,7 +94,13 @@ const BookingsList = () => {
                 bookings.map((booking) => (
                     <Paper key={booking.bookingId} className={classes.paper}>
                         <Typography variant="h6" gutterBottom className={classes.bookingItem}>
-                            {t('bookingId')}: {booking.bookingId}
+                            <Link className={classes.link} component={RouterLink} to={`/bookings/${booking.bookingId}/edit`} state={{ booking }}>
+                                {t('bookingId')}: {booking.bookingId}
+                                <IconButton
+                                    color='secondary'
+                                ><Edit /></IconButton>
+                            </Link>
+
                         </Typography>
                         <Box className={classes.serviceItem}>
                             <Typography variant="body1" className={classes.bookingItem}>
@@ -115,7 +126,7 @@ const BookingsList = () => {
                         <Typography mt={2} variant="h6" className={classes.bookingItem}>
                             {t('totalAmount')}: €{booking.totalAmount}
                         </Typography>
-                        <Chip
+                        <Chip size='small'
                             label={booking.status === 'active' ? t('active') : t('inactive')}
                             className={booking.status === 'active' ? classes.activeChip : classes.inactiveChip}
                         />

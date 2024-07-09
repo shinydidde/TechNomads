@@ -150,5 +150,10 @@
   "servicesBooked": "Seirbhísí Áirithinte",
   "loginToViewBooking": "Logáil isteach chun sonraí do áirithinte a fheiceáil",
   "myBookings": "Mo Áirithintí",
-  "noBookingsFound": "Ní bhfuarthas aon áirithintí."
+  "noBookingsFound": "Ní bhfuarthas aon áirithintí.",
+  "cannotSelectPastDate": "Ní féidir leat dátaí atá caite a roghnú.",
+  "endDateAfterStartDate": "Caithfidh an dáta deiridh a bheith tar éis an dáta tosaigh.",
+  "editBooking": "Cuir in Eagar an Áirithint",
+  "save": "Sábháil",
+  "delete": "Scrios"
 }

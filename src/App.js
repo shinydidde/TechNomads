@@ -16,6 +16,7 @@ import Checkout from './components/Checkout';
 import { CartProvider, CartContext } from './context/CartContext';
 import BookingConfirmation from './pages/BookingConfirmation';
 import Bookings from './pages/Bookings';
+import EditBooking from './components/EditBooking';
 
 
 function App() {
@@ -49,7 +50,7 @@ function App() {
             <NavBar cartItemCount={cart.length} onLocationChange={handleLocationChange} onLanguageChange={handleLanguageChange} />
           )}
           </CartContext.Consumer>
-            <div style={{ marginTop: '70px' }}>
+            <div className="body">
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/services" element={<Services location={location} />} />
@@ -58,6 +59,7 @@ function App() {
                 <Route path="/checkout" element={<Checkout location={location} />} />
                 <Route path="/confirmation" element={<BookingConfirmation location={location} />} />
                 <Route path="/bookings" element={<Bookings />} />
+                <Route path="/bookings/:bookingId/edit" element={<EditBooking />} />
               </Routes>
             </div>
           </div>

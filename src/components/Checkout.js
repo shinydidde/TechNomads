@@ -321,7 +321,7 @@ const Checkout = () => {
                                         €{totalAmount}
                                     </Typography>
                                 </Box><br />
-                                <Button variant="contained" color="secondary" onClick={handleClickOpen} disabled={!mobileFieldFilled}>
+                                <Button variant="contained" color="primary" onClick={handleClickOpen} disabled={!mobileFieldFilled}>
                                     {t('checkout')}
                                 </Button>
                             </Paper>
@@ -363,10 +363,10 @@ const Checkout = () => {
                     <Typography mt={2}><b>{t('totalAmount')}: €{totalAmount}</b></Typography>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} variant='contained' color="primary">
+                    <Button onClick={handleClose} variant='outlined' color="primary">
                         {t('cancel')}
                     </Button>
-                    <Button onClick={handleConfirm} variant='contained' color="secondary">
+                    <Button onClick={handleConfirm} variant='contained' color="primary">
                         {t('confirm')}
                     </Button>
                 </DialogActions>

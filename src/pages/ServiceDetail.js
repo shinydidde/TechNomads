@@ -77,7 +77,7 @@ const ServiceDetail = () => {
               {isInCart ? (
                 <Button
                   variant="outlined"
-                  color="secondary"
+                  color="primary"
                   onClick={handleRemoveFromCart}
                   className={classes.button}
                 >
@@ -86,7 +86,7 @@ const ServiceDetail = () => {
               ) : (
                 <Button
                   variant="contained"
-                  color="secondary"
+                  color="primary"
                   onClick={handleAddToCart}
                   className={classes.button}
                 >

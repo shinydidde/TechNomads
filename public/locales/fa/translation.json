@@ -150,5 +150,10 @@
   "servicesBooked": "خدمات رزرو شده",
   "loginToViewBooking": "لطفا برای مشاهده جزئیات رزرو خود وارد شوید",
   "myBookings": "رزروهای من",
-  "noBookingsFound": "رزروی یافت نشد."
+  "noBookingsFound": "رزروی یافت نشد.",
+  "cannotSelectPastDate": "شما نمی‌توانید تاریخ‌های گذشته را انتخاب کنید.",
+  "endDateAfterStartDate": "تاریخ پایان باید پس از تاریخ شروع باشد.",
+  "editBooking": "ویرایش رزرو",
+  "save": "ذخیره",
+  "delete": "حذف"
 }

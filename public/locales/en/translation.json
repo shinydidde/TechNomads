@@ -150,5 +150,10 @@
   "servicesBooked": "Services Booked",
   "loginToViewBooking": "Please log in to view your booking details",
   "myBookings": "My Bookings",
-  "noBookingsFound": "No bookings found."
+  "noBookingsFound": "No bookings found.",
+  "cannotSelectPastDate": "You cannot select past dates.",
+  "endDateAfterStartDate": "End date must be after the start date.",
+  "editBooking": "Edit Booking",
+  "save": "Save",
+  "delete": "Delete"
 }
