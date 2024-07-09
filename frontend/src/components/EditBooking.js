@@ -65,7 +65,7 @@ const EditBooking = () => {
         }
 
         try {
-            await axios.put(`https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/booking/${booking.bookingId}`, {
+            await axios.post(`https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/booking/edit`, {
                 ...booking,
                 phoneNumber: phoneNumber,
                 startDate: startDate.toISOString(),
@@ -79,7 +79,9 @@ const EditBooking = () => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/booking/${booking.bookingId}`);
+            await axios.post(`https://u13u7uffbc.execute-api.eu-west-1.amazonaws.com/Development/booking/delete`, {
+                bookingId: booking.bookingId,
+            });
             navigate('/bookings');
         } catch (error) {
             console.error('Error deleting booking:', error);
