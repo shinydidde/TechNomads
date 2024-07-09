@@ -14,7 +14,6 @@ import GoogleLoginButton from './GoogleLoginButton';
 import CloseIcon from '@mui/icons-material/Close';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { MuiTelInput, matchIsValidTel } from 'mui-tel-input';
-import i18n from '../i18n';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -152,7 +151,7 @@ const Checkout = () => {
             // Translate the cart items to English before sending to the backend
             const translatedCart = cart.map((service) => ({
                 id: service.id,
-                title: i18n.t(service.title, { lng: 'en' }),
+                title: service.title,
                 price: service.price,
                 count: itemCounts[service.id],
             }));
