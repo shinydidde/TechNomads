@@ -1,14 +1,23 @@
 import React, { useState, useEffect, useContext } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { AppBar, Toolbar, Select, MenuItem, Box, Typography, IconButton, Badge, Button } from '@mui/material';
+import { AppBar, Toolbar, Select, MenuItem, Box, Typography, IconButton, Badge } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { makeStyles } from '@mui/styles';
 import GoogleLoginButton from './GoogleLoginButton';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
+
+const useStyles = makeStyles((theme) => ({
+  links: {
+      textDecoration: 'none',
+      color: 'inherit',
+      marginLeft: '20px'
+  },
+}));
 
 const NavBar = ({ onLocationChange, onLanguageChange }) => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
+  const classes = useStyles();
   const [selectedLocation, setSelectedLocation] = useState('Dublin');
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
   const locations = t('locations', { returnObjects: true });
@@ -19,9 +28,6 @@ const NavBar = ({ onLocationChange, onLanguageChange }) => {
     onLocationChange('Dublin');
   }, [onLocationChange]);
 
-  const handleNavigate = (path) => {
-    navigate(path);
-  };
 
   const handleLocationChange = (event) => {
     const location = event.target.value;
@@ -42,12 +48,8 @@ const NavBar = ({ onLocationChange, onLanguageChange }) => {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           <Link to={'/'}><Box component="img" src="/genie-full-logo.png" alt="Logo" sx={{ height: 50, marginRight: 2 }} /></Link>
         </Typography>
-        <Button color="inherit" onClick={() => handleNavigate('/services')}>
-            {t('services')}
-          </Button>
-          <Button color="inherit" onClick={() => handleNavigate('/bookings')}>
-            {t('myBookings')}
-          </Button>
+        <Link className={classes.links} to={'/services'}>{t('services')}</Link>
+        <Link className={classes.links} to={'/bookings'}>{t('myBookings')}</Link>
         <Select
           labelId="location-select-label"
           id="location-select"
