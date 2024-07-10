@@ -37,11 +37,12 @@ const Services = () => {
                     {service.description}
                   </Typography>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', mt: 2 }}>
-                    <Button variant="outlined" color="primary" onClick={() => handleServiceClick(service)}>
+                    <Button size='small' variant="outlined" color="primary" onClick={() => handleServiceClick(service)}>
                       {t('viewDetails')}
                     </Button>
                     {isInCart(service) ? (
                       <Button
+                        size='small'
                         variant="outlined"
                         color="primary"
                         onClick={() => removeFromCart(service.id)}
@@ -52,6 +53,7 @@ const Services = () => {
                       <Button
                         variant="contained"
                         color="primary"
+                        size='small'
                         onClick={() => addToCart(service)}
                       >
                         {t('addToCart')}

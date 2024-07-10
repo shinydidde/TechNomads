@@ -47,9 +47,13 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(0, 1),
     },
     img: {
-        width: '100px'
+        width: '100px',
+        marginRight: '15px'
     },
     dateInput: {
+        marginBottom: theme.spacing(2),
+    },
+    formField: {
         marginBottom: theme.spacing(2),
     },
 }));
@@ -207,51 +211,57 @@ const Checkout = () => {
                             aria-controls="panel2bh-content"
                             id="panel2bh-header"
                         >
-                            <Typography sx={{ width: '33%', flexShrink: 0 }}>{t('bookingDetails')}</Typography>
+                            <Typography sx={{ flexShrink: 0 }}>{t('bookingDetails')}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
-                            <Paper className={classes.paper}>
+                        <Paper className={classes.paper}>
                                 <Box>
-                                    <TextField
-                                        id="start-date"
-                                        label={t('startDate')}
-                                        type="date"
-                                        value={startDate.toISOString().slice(0, 10)}
-                                        onChange={handleStartDateChange}
-                                        className={classes.dateInput}
-                                        InputLabelProps={{
-                                            shrink: true,
-                                        }}
-                                        required
-                                        inputProps={{
-                                            min: new Date().toISOString().slice(0, 10),
-                                        }}
-                                    />
-                                    <TextField
-                                        id="end-date"
-                                        label={t('endDate')}
-                                        type="date"
-                                        value={endDate ? endDate.toISOString().slice(0, 10) : ''}
-                                        onChange={handleEndDateChange}
-                                        className={classes.dateInput}
-                                        InputLabelProps={{
-                                            shrink: true,
-                                        }}
-                                        inputProps={{
-                                            min: minEndDate.toISOString().slice(0, 10), // Minimum end date is the day after start date
-                                        }}
-                                    />
-                                    <MuiTelInput
-                                        id="phone-number"
-                                        label={t('mobile')}
-                                        value={phoneNumber}
-                                        defaultCountry="IE"
-                                        onChange={handlePhoneNumberChange}
-                                        className={classes.dateInput}
-                                        required
-                                        error={Boolean(phoneNumberError)}
-                                        helperText={phoneNumberError}
-                                    />
+                                    <Box className={classes.formField}>
+                                        <TextField
+                                            id="start-date"
+                                            label={t('startDate')}
+                                            type="date"
+                                            value={startDate.toISOString().slice(0, 10)}
+                                            onChange={handleStartDateChange}
+                                            fullWidth
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            required
+                                            inputProps={{
+                                                min: new Date().toISOString().slice(0, 10),
+                                            }}
+                                        />
+                                    </Box>
+                                    <Box className={classes.formField}>
+                                        <TextField
+                                            id="end-date"
+                                            label={t('endDate')}
+                                            type="date"
+                                            value={endDate ? endDate.toISOString().slice(0, 10) : ''}
+                                            onChange={handleEndDateChange}
+                                            fullWidth
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            inputProps={{
+                                                min: minEndDate.toISOString().slice(0, 10), // Minimum end date is the day after start date
+                                            }}
+                                        />
+                                    </Box>
+                                    <Box className={classes.formField}>
+                                        <MuiTelInput
+                                            id="phone-number"
+                                            label={t('mobile')}
+                                            value={phoneNumber}
+                                            defaultCountry="IE"
+                                            onChange={handlePhoneNumberChange}
+                                            fullWidth
+                                            required
+                                            error={Boolean(phoneNumberError)}
+                                            helperText={phoneNumberError}
+                                        />
+                                    </Box>
                                 </Box>
                             </Paper>
                         </AccordionDetails>
@@ -262,7 +272,7 @@ const Checkout = () => {
                             aria-controls="panel1bh-content"
                             id="panel1bh-header"
                         >
-                            <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                            <Typography sx={{ flexShrink: 0 }}>
                                 {t('cartItems')}
                             </Typography>
                         </AccordionSummary>
@@ -272,7 +282,7 @@ const Checkout = () => {
                                     <Paper className={classes.paper} key={service.id}>
                                         <Box className={classes.item}>
                                             <img className={classes.img} src={service.image} alt='' />
-                                            <Typography variant="h6">{t(service.title)} - €{service.price}</Typography>
+                                            <Typography variant="text">{t(service.title)} - €{service.price}</Typography>
                                             <Box className={classes.itemCount}>
                                                 <IconButton
                                                     color='secondary'
@@ -294,7 +304,7 @@ const Checkout = () => {
                             aria-controls="panel3bh-content"
                             id="panel3bh-header"
                         >
-                            <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                            <Typography sx={{ flexShrink: 0 }}>
                                 {t('paymentSummary')}
                             </Typography>
                         </AccordionSummary>

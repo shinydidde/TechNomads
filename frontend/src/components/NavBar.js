@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawer: {
     width: 250,
+    marginTop: '70px',
   },
 }));
 

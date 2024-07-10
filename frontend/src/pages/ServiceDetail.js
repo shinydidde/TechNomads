@@ -11,9 +11,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     height: 'auto',
   },
-  button: {
-    marginTop: theme.spacing(2),
-  },
 }));
 
 const ServiceDetail = () => {
@@ -48,7 +45,7 @@ const ServiceDetail = () => {
 
   return (
     <Container className={classes.root}>
-      <Grid container spacing={10}>
+      <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <Box mt={2}>
             <motion.img
@@ -63,14 +60,13 @@ const ServiceDetail = () => {
         </Grid>
         <Grid item xs={12} md={6}>
             <Typography variant="h4">{t(service.title)}</Typography>
-
             <Typography variant="body1" mt={2}>
               {service.description}
             </Typography>
             <Typography variant="body1" mt={2}>
               {t('price')} : €{service.price}
-            </Typography>
-            <Grid container justifyContent="flex-start" spacing={2} mt={4}>
+            </Typography><br/>
+              <Box>
               {isInCart ? (
                 <Button
                   variant="outlined"
@@ -90,7 +86,7 @@ const ServiceDetail = () => {
                   {t('addToCart')}
                 </Button>
               )}
-            </Grid>
+              </Box>
         </Grid>
       </Grid>
     </Container>

@@ -24,12 +24,7 @@ import NotFound from './pages/NotFound';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-      display: 'flex',
-      flexDirection: 'column',
-  },
   content: {
-      flex: 1,
       marginTop: '90px',
       marginBottom: '40px'
   },
@@ -62,7 +57,7 @@ function App() {
       <AuthProvider>
         <CartProvider>
           <Router>
-            <div className={classes.root}>
+            <div>
               <CartContext.Consumer>
                 {({ cart }) => (
                   <NavBar cartItemCount={cart.length} onLocationChange={handleLocationChange} onLanguageChange={handleLanguageChange} />
