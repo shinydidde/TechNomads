@@ -29,13 +29,15 @@ const AboutUs = () => {
                     </Grid>
                 </Grid>
                 <Typography variant="body1" paragraph>
-                    Welcome to our company! We are dedicated to providing the best services to our customers.
+                Welcome to Genie, your ultimate destination for personalized services tailored to your needs. At Genie, we believe in the magic of convenience and excellence. Our platform connects you with a wide range of professional services, ensuring that whatever you need, we can make it happen.
                 </Typography>
                 <Typography variant="body1" paragraph>
-                    Our team is composed of skilled professionals who are passionate about their work and strive to deliver exceptional results.
+                Whether you’re looking for home services, event planning, or personal care, Genie offers a curated selection of top-rated professionals ready to deliver exceptional results. Our easy-to-use interface allows you to browse, book, and manage your services seamlessly.
+                Our team is composed of skilled professionals who are passionate about their work and strive to deliver exceptional results.
                 </Typography>
                 <Typography variant="body1" paragraph>
-                    Thank you for choosing us. We look forward to serving you!
+                At Genie, your satisfaction is our top priority. We strive to provide an unparalleled experience, making your life easier and more enjoyable. Join our community of satisfied customers and experience the magic of Genie today!
+                Thank you for choosing us. We look forward to serving you!
                 </Typography>
             </Paper>
         </Container>
