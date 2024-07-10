@@ -48,6 +48,7 @@ const ContactUs = () => {
                         onChange={(e) => setName(e.target.value)}
                         required
                     />
+                    <br/><br/>
                     <TextField
                         className={classes.formField}
                         label="Email"
@@ -57,7 +58,7 @@ const ContactUs = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         type="email"
                         required
-                    />
+                    /><br/><br/>
                     <TextField
                         className={classes.formField}
                         label="Message"
@@ -68,7 +69,7 @@ const ContactUs = () => {
                         multiline
                         rows={4}
                         required
-                    />
+                    /><br/><br/>
                     <Button variant="contained" color="primary" type="submit">
                         Submit
                     </Button>
