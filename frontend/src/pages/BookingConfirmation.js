@@ -8,9 +8,6 @@ import { useAuth } from '../context/AuthContext'; // Assuming you have an AuthCo
 import GoogleLoginButton from '../components/GoogleLoginButton';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        marginTop: theme.spacing(4),
-    },
     paper: {
         padding: theme.spacing(2),
         marginBottom: theme.spacing(2),

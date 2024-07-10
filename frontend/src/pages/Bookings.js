@@ -9,9 +9,6 @@ import GoogleLoginButton from '../components/GoogleLoginButton';
 import { Edit } from '@mui/icons-material';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        marginTop: theme.spacing(4),
-    },
     paper: {
         padding: theme.spacing(2),
         marginBottom: theme.spacing(2),
@@ -32,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: theme.spacing(1),
         right: theme.spacing(1),
+        textTransform: 'capitalize'
     },
     inactiveChip: {
         backgroundColor: 'gray',
@@ -39,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: theme.spacing(1),
         right: theme.spacing(1),
+        textTransform: 'capitalize'
     },
 }));
 
@@ -94,13 +93,18 @@ const BookingsList = () => {
                 bookings.map((booking) => (
                     <Paper key={booking.bookingId} className={classes.paper}>
                         <Typography variant="h6" gutterBottom className={classes.bookingItem}>
-                            <Link className={classes.link} component={RouterLink} to={`/bookings/${booking.bookingId}/edit`} state={{ booking }}>
-                                {t('bookingId')}: {booking.bookingId}
-                                <IconButton
-                                    color='secondary'
-                                ><Edit /></IconButton>
-                            </Link>
-
+                            { booking.status === 'active' ?
+                                <Link className={classes.link} component={RouterLink} to={`/bookings/${booking.bookingId}/edit`} state={{ booking }}>
+                                    {t('bookingId')}: {booking.bookingId}
+                                    <IconButton
+                                        color='secondary'
+                                    ><Edit /></IconButton>
+                                </Link>
+                                :
+                                <Link className={classes.link} disabled>
+                                    {t('bookingId')}: {booking.bookingId}
+                                </Link>
+                            }
                         </Typography>
                         <Box className={classes.serviceItem}>
                             <Typography variant="body1" className={classes.bookingItem}>

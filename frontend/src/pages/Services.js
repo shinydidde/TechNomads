@@ -20,7 +20,7 @@ const Services = () => {
 
   return (
     <Container>
-      <Box sx={{ mt: 4 }}>
+      <Box>
         <Typography variant="h4" gutterBottom>
           {t('ourServices')}
         </Typography>

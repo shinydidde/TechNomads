@@ -17,9 +17,27 @@ import { CartProvider, CartContext } from './context/CartContext';
 import BookingConfirmation from './pages/BookingConfirmation';
 import Bookings from './pages/Bookings';
 import EditBooking from './components/EditBooking';
+import Footer from './components/Footer';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
+import NotFound from './pages/NotFound';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+      display: 'flex',
+      flexDirection: 'column',
+  },
+  content: {
+      flex: 1,
+      marginTop: '90px',
+      marginBottom: '40px'
+  },
+}));
 
 
 function App() {
+  const classes = useStyles();
   const { i18n } = useTranslation();
   const [location, setLocation] = useState('');
   // eslint-disable-next-line no-unused-vars
@@ -42,28 +60,32 @@ function App() {
   return (
     <ThemeProvider theme={customizedTheme}>
       <AuthProvider>
-      <CartProvider>
-        <Router>
-          <div className="App">
-          <CartContext.Consumer>
-          {({ cart }) => (
-            <NavBar cartItemCount={cart.length} onLocationChange={handleLocationChange} onLanguageChange={handleLanguageChange} />
-          )}
-          </CartContext.Consumer>
-            <div className="body">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/services" element={<Services location={location} />} />
-                <Route path="/service/:id" element={<ServiceDetail location={location} />} />
-                <Route path="/services/:id/book" element={<BookingForm location={location} />} />
-                <Route path="/checkout" element={<Checkout location={location} />} />
-                <Route path="/confirmation" element={<BookingConfirmation location={location} />} />
-                <Route path="/bookings" element={<Bookings />} />
-                <Route path="/bookings/:bookingId/edit" element={<EditBooking />} />
-              </Routes>
+        <CartProvider>
+          <Router>
+            <div className={classes.root}>
+              <CartContext.Consumer>
+                {({ cart }) => (
+                  <NavBar cartItemCount={cart.length} onLocationChange={handleLocationChange} onLanguageChange={handleLanguageChange} />
+                )}
+              </CartContext.Consumer>
+              <div className={classes.content}>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/services" element={<Services location={location} />} />
+                  <Route path="/service/:id" element={<ServiceDetail location={location} />} />
+                  <Route path="/services/:id/book" element={<BookingForm location={location} />} />
+                  <Route path="/checkout" element={<Checkout location={location} />} />
+                  <Route path="/confirmation" element={<BookingConfirmation location={location} />} />
+                  <Route path="/bookings" element={<Bookings />} />
+                  <Route path="/bookings/:bookingId/edit" element={<EditBooking />} />
+                  <Route path="/about" element={<AboutUs />} />
+                  <Route path="/contact" element={<ContactUs />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </div>
+                <Footer />
             </div>
-          </div>
-        </Router>
+          </Router>
         </CartProvider>
       </AuthProvider>
     </ThemeProvider>

@@ -7,9 +7,6 @@ import { CartContext } from '../context/CartContext';
 import { motion } from 'framer-motion';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    marginTop: theme.spacing(12),
-  },
   image: {
     maxWidth: '100%',
     height: 'auto',
@@ -52,7 +49,7 @@ const ServiceDetail = () => {
   return (
     <Container className={classes.root}>
       <Grid container spacing={10}>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <Box mt={2}>
             <motion.img
               src={service.image}
@@ -64,7 +61,7 @@ const ServiceDetail = () => {
             />
           </Box>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
             <Typography variant="h4">{t(service.title)}</Typography>
 
             <Typography variant="body1" mt={2}>
